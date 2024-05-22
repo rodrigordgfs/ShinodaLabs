@@ -3,6 +3,7 @@ import Menu from "../components/Menu";
 import Feed from "../components/Feed";
 import FeedHeader from "../components/FeedHeader";
 import FeedProjects from "../components/FeedProjects";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
           <FeedProjects />
         </Feed>
       </div>
+      <Footer />
     </main>
   );
 }
