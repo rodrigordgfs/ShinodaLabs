@@ -20,13 +20,13 @@ export default function FeedHeader() {
           height={128}
           alt="Imagem do Rodrigo Shinoda"
         />
-        <h1 className="text-xl font-bold mt-2 text-zinc-900">
+        <h1 className="text-xl font-bold mt-2 text-zinc-900  text-center md:text-start">
           Rodrigo &apos;&apos;Shinoda&apos;&apos; Rodrigues
         </h1>
-        <p className="text-zinc-500 font-normal text-sm">
+        <p className="text-zinc-500 font-normal text-sm  text-center md:text-start">
           @mrshinodaa - ShinodaLabs - Brasil
         </p>
-        <p className="text-zinc-500 font-normal text-sm">
+        <p className="text-zinc-500 font-normal text-sm text-center md:text-start">
           Desenvolvedor Frontend Pleno | Grupo Lins Ferrão
         </p>
         <div className="flex flex-row gap-2 mt-2">
