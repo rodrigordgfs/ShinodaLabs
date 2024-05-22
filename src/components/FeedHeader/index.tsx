@@ -11,7 +11,7 @@ import Image from "next/image";
 
 export default function FeedHeader() {
   return (
-    <div className="flex flex-col md:flex-row gap-6 border-b-2 pb-4 border-zinc-200">
+    <div className="flex flex-col md:flex-row gap-6 border-b-2 pb-6 border-zinc-200">
       <div className="md:flex-1 flex flex-col items-center md:items-start">
         <Image
           src="https://github.com/rodrigordgfs.png"
