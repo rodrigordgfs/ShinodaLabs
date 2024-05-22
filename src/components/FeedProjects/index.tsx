@@ -7,43 +7,113 @@ export interface Project {
   description: string;
   tags: string[];
   image: string;
+  url: string;
+  repository: string;
 }
 
 export default function FeedProjects() {
-  const PROJETOS = [
+  const PROJETOS: Project[] = [
     {
       id: "6f8f5947-beec-4ba1-ba56-7d3700bc1859",
-      date: "2024-05-22",
-      title: "Projeto 1",
-      description:
-        "Nulla magna excepteur culpa reprehenderit sit ea reprehenderit pariatur elit ea cupidatat enim sit nostrud.",
-      tags: ["react", "next.js"],
-      image: "https://via.placeholder.com/800x600",
+      date: "2022-11-28",
+      title: "To Do List",
+      description: "Projeto criado como desafio do bootcamp da Rocketseat.",
+      tags: ["react", "typescript", "css modules", "phosphor icons"],
+      image: "https://i.imgur.com/6CG03RE.png",
+      url: "https://to-do-list-pi-tawny.vercel.app/",
+      repository: "https://github.com/rodrigordgfs/ToDo-List",
     },
     {
-      id: "24ab435f-8e36-46b5-8db2-c65b9fb55156",
-      date: "2024-05-22",
-      title: "Projeto 1",
+      id: "5250981b-0711-47cb-9759-4eb687a8595c",
+      date: "2023-01-23",
+      title: "R Chat",
       description:
-        "Nulla magna excepteur culpa reprehenderit sit ea reprehenderit pariatur elit ea cupidatat enim sit nostrud.",
-      tags: ["react", "next.js", "react", "next.js", "react", "next.js", "react", "next.js", ],
-      image: "https://via.placeholder.com/800x600",
+        "Chat criado para colocar em pratica os conhecimentos adiquirido sobre React.",
+      tags: [
+        "react",
+        "typescript",
+        "tailwindcss",
+        "context api",
+        "firebase",
+        "date-fns",
+      ],
+      image: "https://i.imgur.com/VxgqCzY.png",
+      url: "https://r-chat.vercel.app/",
+      repository: "https://github.com/rodrigordgfs/R-Chat",
     },
     {
-      id: "a8d43673-51fb-4e0e-99f9-c2e3e3a49585",
-      date: "2024-05-22",
-      title: "Projeto 1",
-      description:
-        "Nulla magna excepteur culpa reprehenderit sit ea reprehenderit pariatur elit ea cupidatat enim sit nostrud.",
-      tags: ["react", "next.js"],
-      image: "https://via.placeholder.com/800x600",
+      id: "724615df-1d24-42af-a5bd-1fd741a4d310",
+      date: "2022-12-19",
+      title: "Ignite Timer",
+      description: "Projeto criado como desafio do bootcamp da Rocketseat",
+      tags: [
+        "react",
+        "typescript",
+        "styled components",
+        "zod",
+        "react hook forms",
+        "date-fns",
+      ],
+      image: "https://i.imgur.com/LrJSAcK.png",
+      url: "https://ignite-timer-brown-tau.vercel.app/",
+      repository: "https://github.com/rodrigordgfs/Ignite-Timer",
     },
-  ] as Project[];
+    {
+      id: "9a291fe2-861a-4a4f-943e-8c1be7dbd2c7",
+      date: "2023-02-08",
+      title: "Coffee Delivery",
+      description: "Projeto criado como desafio do bootcamp da Rocketseat.",
+      tags: ["react", "typescript", "styled components", "context api"],
+      image: "https://i.imgur.com/JQlmeoh.png",
+      url: "https://coffee-delivery-sigma-gules.vercel.app/",
+      repository: "https://github.com/rodrigordgfs/Coffee-Delivery",
+    },
+    {
+      id: "a59d7579-598d-4c06-944a-37f6912a9ae9",
+      date: "2023-02-14",
+      title: "DT Money",
+      description: "Projeto criado como desafio do bootcamp da Rocketseat.",
+      tags: [
+        "react",
+        "typescript",
+        "styled components",
+        "context api",
+        "zod",
+        "react hook forms",
+      ],
+      image: "https://i.imgur.com/fXdilpE.png",
+      url: "https://dt-money-plum.vercel.app/",
+      repository: "https://github.com/rodrigordgfs/DT-Money",
+    },
+    {
+      id: "eb1d547d-fd4b-4934-b6ce-2e05aed7f8b7",
+      date: "2023-02-16",
+      title: "GitHub Blog",
+      description: "Projeto criado como desafio do bootcamp da Rocketseat.",
+      tags: [
+        "react",
+        "typescript",
+        "styled components",
+        "context api",
+        "zod",
+        "react hook forms",
+      ],
+      image: "https://i.imgur.com/an0gTPC.png",
+      url: "https://github-blog-rose.vercel.app/",
+      repository: "https://github.com/rodrigordgfs/Github-Blog",
+    },
+  ];
+
+  const ordenedProjects = PROJETOS.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 
   return (
     <div className="flex flex-col pt-5">
-      <h2 className="font-bold text-3xl text-zinc-900 mb-4">Últimos Projetos</h2>
-      {PROJETOS.map((project) => {
+      <h2 className="font-bold text-3xl text-zinc-900 mb-4">
+        Últimos Projetos
+      </h2>
+      {ordenedProjects.map((project) => {
         return <FeedProjectItem key={project.id} {...project} />;
       })}
     </div>
