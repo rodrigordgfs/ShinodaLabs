@@ -16,20 +16,23 @@ export default function FeedProjectItem({
   url,
   repository,
 }: Project) {
-  const ref = useRef<HTMLElement | null>(null);
+  const refPreview = useRef<HTMLAnchorElement | null>(null);
+  const refGithub = useRef<HTMLAnchorElement | null>(null);
 
   const formattedDate = useFormattedDate(date, "dd MMMM yyyy");
 
-  useRipple(ref, {
+  useRipple(refPreview, {
     animationLength: 600,
-    rippleColor: "rgba(234,88,12,0.6)",
+    rippleColor: "rgba(255,255,255,0.6)",
+  });
+
+  useRipple(refGithub, {
+    animationLength: 600,
+    rippleColor: "rgba(255,255,255,0.6)",
   });
 
   return (
-    <article
-      // ref={ref}
-      className="flex flex-col group rounded-lg"
-    >
+    <article className="flex flex-col group rounded-lg">
       <div className="flex flex-row gap-2 items-center">
         <div className="w-6 h-6 rounded-full bg-zinc-400 group-hover:bg-orange-500 transition-all flex items-center justify-center">
           <Clock3 size={16} className="text-white" />
@@ -61,6 +64,7 @@ export default function FeedProjectItem({
         </div>
         <div className="flex flex-row w-full gap-2 mt-2">
           <a
+            ref={refPreview}
             href={url}
             target="_blank"
             className="w-full h-10 rounded-lg bg-orange-500 hover:bg-orange-600 transition-all text-white font-semibold flex flex-row items-center justify-center gap-2"
@@ -69,6 +73,7 @@ export default function FeedProjectItem({
             Preview
           </a>
           <a
+            ref={refGithub}
             href={repository}
             target="_blank"
             className="w-full h-10 rounded-lg bg-zinc-500 hover:bg-zinc-600 transition-all text-white font-semibold  flex flex-row items-center justify-center gap-2"
