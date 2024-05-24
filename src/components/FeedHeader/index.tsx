@@ -27,7 +27,7 @@ export default function FeedHeader() {
   });
 
   return (
-    <div className="flex flex-col md:flex-row gap-6 border-b-2 pb-6 border-zinc-200">
+    <div className="flex flex-col md:flex-row gap-6 border-b pb-6 border-zinc-200">
       <div className="flex flex-1 flex-col items-center">
         <Image
           src="https://github.com/rodrigordgfs.png"

@@ -110,9 +110,6 @@ export default function FeedProjects() {
 
   return (
     <div className="flex flex-col pt-5">
-      <h2 className="font-bold text-3xl text-zinc-900 mb-4">
-        Últimos Projetos
-      </h2>
       {ordenedProjects.map((project) => {
         return <FeedProjectItem key={project.id} {...project} />;
       })}

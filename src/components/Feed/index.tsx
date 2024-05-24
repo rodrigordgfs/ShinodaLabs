@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import Tabs from "../Tabs";
 
 interface FeedProps {
   children: ReactNode;
