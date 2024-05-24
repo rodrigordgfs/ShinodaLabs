@@ -28,7 +28,7 @@ export default function FeedHeader() {
 
   return (
     <div className="flex flex-col md:flex-row gap-6 border-b-2 pb-6 border-zinc-200">
-      <div className="md:flex-1 flex flex-col items-center md:items-start">
+      <div className="flex flex-1 flex-col items-center">
         <Image
           src="https://github.com/rodrigordgfs.png"
           className="shadow rounded-full"
@@ -76,7 +76,7 @@ export default function FeedHeader() {
           </a>
         </div>
       </div>
-      <div className="flex flex-row md:flex-col md:max-w-60 md:w-full items-center justify-center md:items-start md:justify-start gap-2">
+      {/* <div className="flex flex-row md:flex-col md:max-w-60 md:w-full items-center justify-center md:items-start md:justify-start gap-2">
         <a
           ref={refCoffee}
           // href={repository}
@@ -95,7 +95,7 @@ export default function FeedHeader() {
           <PhoneCallIcon size={16} className="text-white" />
           Fale comigo
         </a>
-      </div>
+      </div> */}
     </div>
   );
 }
