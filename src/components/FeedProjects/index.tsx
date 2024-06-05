@@ -8,7 +8,7 @@ export interface Project {
   tags: string[];
   image: string;
   url: string;
-  repository: string;
+  repository: string | undefined;
 }
 
 export default function FeedProjects() {
@@ -101,6 +101,20 @@ export default function FeedProjects() {
       image: "https://i.imgur.com/an0gTPC.png",
       url: "https://github-blog-rose.vercel.app/",
       repository: "https://github.com/rodrigordgfs/Github-Blog",
+    },
+    {
+      id: "748d4383-006c-4387-b94b-d6ef491e4726",
+      date: "2024-03-10",
+      title: "Materialize Imóveis",
+      description: "Site para a Materialize Imóveis",
+      tags: [
+        "wordpress",
+        "elementor",
+        "jet engine"
+      ],
+      image: "https://i.imgur.com/K4nchoj.png",
+      url: "https://materializeimoveis.com.br/",
+      repository: undefined,
     },
   ];
 

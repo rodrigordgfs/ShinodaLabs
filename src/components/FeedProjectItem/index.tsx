@@ -72,15 +72,17 @@ export default function FeedProjectItem({
             <EyeIcon size={16} className="text-white" />
             Preview
           </a>
-          <a
-            ref={refGithub}
-            href={repository}
-            target="_blank"
-            className="w-full h-10 rounded-lg bg-zinc-500 hover:bg-zinc-600 transition-all text-white font-semibold  flex flex-row items-center justify-center gap-2"
-          >
-            <GithubIcon size={16} className="text-white" />
-            Github
-          </a>
+          {repository && (
+            <a
+              ref={refGithub}
+              href={repository}
+              target="_blank"
+              className="w-full h-10 rounded-lg bg-zinc-500 hover:bg-zinc-600 transition-all text-white font-semibold  flex flex-row items-center justify-center gap-2"
+            >
+              <GithubIcon size={16} className="text-white" />
+              Github
+            </a>
+          )}
         </div>
       </div>
     </article>
