@@ -2,16 +2,15 @@ import Background from "../components/Background";
 import Menu from "../components/Menu";
 import Feed from "../components/Feed";
 import FeedHeader from "../components/FeedHeader";
-import FeedProjects from "../components/FeedProjects";
+import FeedProjects, { Project } from "../components/FeedProjects";
 import Footer from "@/components/Footer";
 import Tabs from "@/components/Tabs";
-
 export interface TabsProps {
   label: string;
   content: JSX.Element;
 }
 
-export default function Home() {
+export default async function Home() {
   const tabs: TabsProps[] = [
     {
       label: "Projetos",
