@@ -13,7 +13,7 @@ export default function FeedProjectItem({
   description,
   tags,
   image,
-  url,
+  link,
   repository,
 }: Project) {
   const refPreview = useRef<HTMLAnchorElement | null>(null);
@@ -65,7 +65,7 @@ export default function FeedProjectItem({
         <div className="flex flex-row w-full gap-2 mt-2">
           <a
             ref={refPreview}
-            href={url}
+            href={link}
             target="_blank"
             className="w-full h-10 rounded-lg bg-orange-500 hover:bg-orange-600 transition-all text-white font-semibold flex flex-row items-center justify-center gap-2"
           >
