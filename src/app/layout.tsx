@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
 
 const inter = Open_Sans({ subsets: ["latin"] });
@@ -16,6 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <Analytics />
       <body className={inter.className}>{children}</body>
     </html>
   );
