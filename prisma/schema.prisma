@@ -26,3 +26,17 @@ model Project {
 
   @@map("projects")
 }
+
+model Career {
+  id           String   @id @default(cuid())
+  title        String
+  company      String
+  location     String
+  locationType String
+  startDate    String
+  endDate      String
+  description  String
+  skills       String[]
+
+  @@map("career")
+}

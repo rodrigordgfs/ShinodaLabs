@@ -5,6 +5,9 @@ import FeedHeader from "../components/FeedHeader";
 import FeedProjects, { Project } from "../components/FeedProjects";
 import Footer from "@/components/Footer";
 import Tabs from "@/components/Tabs";
+
+export const revalidate = 3600
+
 export interface TabsProps {
   label: string;
   content: JSX.Element;
