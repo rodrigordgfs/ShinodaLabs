@@ -28,13 +28,13 @@ model Project {
 }
 
 model Career {
-  id           String   @id @default(cuid())
+  id           String    @id @default(cuid())
   title        String
   company      String
   location     String
   locationType String
-  startDate    String
-  endDate      String
+  startDate    DateTime
+  endDate      DateTime?
   description  String
   skills       String[]
 
