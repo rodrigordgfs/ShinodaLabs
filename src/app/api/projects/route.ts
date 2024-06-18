@@ -1,6 +1,21 @@
 // app/api/projects/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma"; // Use alias '@' para evitar caminhos relativos complicados
+import { prisma } from "@/lib/prisma";
+import { z } from "zod";
+
+const projectSchema = z.object({
+  title: z.string().min(1, "Title is required"),
+  description: z.string().min(1, "Description is required"),
+  tags: z
+    .array(z.string().min(1, "Tag is required"))
+    .min(1, "At least one tag is required"),
+  image: z.string().url("Invalid URL for image"),
+  link: z.string().url("Invalid URL for link"),
+  repository: z.string().url("Invalid URL for repository").optional(),
+  date: z.string().refine((date) => !isNaN(Date.parse(date)), {
+    message: "Invalid date",
+  }),
+});
 
 // Helper function to handle errors and send response
 const handleError = (error: any, message: string) => {
@@ -24,14 +39,16 @@ export async function GET(req: NextRequest) {
       prisma.project.count(),
     ]);
 
-    return NextResponse.json({
-      data: projects,
-      total: totalProjects,
-      page,
-      pageSize,
-      totalPages: Math.ceil(totalProjects / pageSize),
-    }, { status: 200 });
-
+    return NextResponse.json(
+      {
+        data: projects,
+        total: totalProjects,
+        page,
+        pageSize,
+        totalPages: Math.ceil(totalProjects / pageSize),
+      },
+      { status: 200 }
+    );
   } catch (error) {
     return handleError(error, "Failed to fetch projects");
   }
@@ -41,7 +58,9 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { title, description, tags, image, link, repository, date } = body;
+    const parsedBody = projectSchema.parse(body);
+    const { title, description, tags, image, link, repository, date } =
+      parsedBody;
 
     const newProject = await prisma.project.create({
       data: {
@@ -56,8 +75,11 @@ export async function POST(req: NextRequest) {
     });
 
     return NextResponse.json(newProject, { status: 201 });
-
   } catch (error) {
+    if (error instanceof z.ZodError) {
+      // Handle validation errors
+      return NextResponse.json({ error: error.errors }, { status: 400 });
+    }
     return handleError(error, "Failed to create project");
   }
 }
