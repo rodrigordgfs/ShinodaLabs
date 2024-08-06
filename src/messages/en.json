@@ -1,0 +1,15 @@
+{
+    "Header": {
+      "about": "About",
+      "resume": "Resume",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "HomePage": {
+      "i_am": "I'm",
+      "dev_fullstack": "Fullstack Developer",
+      "dev_web": "Web developer",
+      "ui_ux": "UI/UX Designer"
+    }
+  }
+  
