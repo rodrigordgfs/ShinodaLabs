@@ -16,6 +16,7 @@ const config: Config = {
       },
       backgroundImage: {
         pattern: "url('/bg.png')",
+        me: "url('/me.jpg')",
       },
     },
   },
