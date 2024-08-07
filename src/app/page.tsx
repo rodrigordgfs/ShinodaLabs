@@ -1,41 +1,15 @@
-import Background from "../components/Background";
-import Menu from "../components/Menu";
-import Feed from "../components/Feed";
-import FeedHeader from "../components/FeedHeader";
-import FeedProjects, { Project } from "../components/FeedProjects";
-import Footer from "@/components/Footer";
-import Tabs from "@/components/Tabs";
+import HomeHeader from "./components/HomeHeader";
+import HomeContent from "./components/HomeContent";
+import HomeFooter from "./components/HomeFooter";
 
-export const revalidate = 3600
-
-export interface TabsProps {
-  label: string;
-  content: JSX.Element;
-}
-
-export default async function Home() {
-  const tabs: TabsProps[] = [
-    {
-      label: "Projetos",
-      content: <FeedProjects />,
-    },
-    {
-      label: "Carreira",
-      content: <div>Em breve ...</div>,
-    },
-  ];
-
+export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col min-w-full items-center bg-zinc-50">
-      <Background />
-      <Menu />
-      <div className="relative px-3 w-full max-w-full flex flex-col items-center">
-        <Feed>
-          <FeedHeader />
-          <Tabs tabs={tabs} />
-        </Feed>
+    <div className="w-full max-w-full h-screen max-h-screen text-zinc-50 flex flex-col bg-pattern bg-no-repeat bg-center">
+      <div className="flex flex-col max-w-6xl w-full h-screen mx-auto px-4">
+        <HomeHeader />
+        <HomeContent />
+        <HomeFooter />
       </div>
-      <Footer />
-    </main>
+    </div>
   );
 }

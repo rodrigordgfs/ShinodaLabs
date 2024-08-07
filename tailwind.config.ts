@@ -8,8 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      rotate: {
+        '270': '270deg',
+      },
+      transformOrigin: {
+        'left-bottom': 'left bottom',
+      },
       backgroundImage: {
-        "hero": "url('/background.jpg')",
+        pattern: "url('/bg.png')",
+        me: "url('/me.jpg')",
       },
     },
   },
