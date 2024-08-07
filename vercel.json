@@ -1,19 +1,13 @@
 {
-  "version": 2,
-  "builds": [
+    "routes": [
     {
-      "src": "next.config.mjs",
-      "use": "@vercel/next"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/(en|br|de)/:path*",
-      "destination": "/:path*"
+      "src": "/(en|br|es)/:path*",
+      "dest": "/:path*",
+      "locale": false
     },
     {
-      "source": "/",
-      "destination": "/en"
+      "src": "/",
+      "dest": "/br"
     }
   ]
-}
+  }
