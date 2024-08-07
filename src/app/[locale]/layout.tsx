@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Transition from "./Transition";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import Transition from "./Transition";
 
 const poppins = Poppins({ weight: "400", style: "normal", subsets: ["latin"] });
 
