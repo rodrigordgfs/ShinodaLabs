@@ -15,8 +15,8 @@ const config: Config = {
         'left-bottom': 'left bottom',
       },
       backgroundImage: {
-        pattern: "url('/bg.png')",
-        me: "url('/me.jpg')",
+        pattern: "url('https://rniscvxztrspzsoduaqy.supabase.co/storage/v1/object/public/portifolio/bg.png?t=2024-08-07T03%3A21%3A14.023Z')",
+        me: "url('https://rniscvxztrspzsoduaqy.supabase.co/storage/v1/object/public/portifolio/me.jpg?t=2024-08-07T03%3A21%3A42.455Z')",
       },
     },
   },

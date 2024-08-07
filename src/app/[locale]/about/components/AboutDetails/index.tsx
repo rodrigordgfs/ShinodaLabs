@@ -43,7 +43,7 @@ export default function AboutDetails() {
         </ul>
 
         <div className="flex flex-col md:flex-row gap-3 items-center">
-          <a href="/curriculo.pdf" download="curriculo.pdf">
+          <a href="https://rniscvxztrspzsoduaqy.supabase.co/storage/v1/object/public/portifolio/curriculo.pdf?t=2024-08-07T03%3A21%3A53.735Z" download="curriculo.pdf">
             <button className="bg-lime-500 text-zinc-950 px-6 py-2 w-full md:w-auto rounded-full hover:bg-lime-400 transition-all">
               Baixar Currículo
             </button>
