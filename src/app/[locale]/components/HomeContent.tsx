@@ -20,9 +20,11 @@ export default function HomeContent() {
           showCursor={true}
         />
       </p>
-      <button className="bg-lime-500 text-zinc-950 px-6 py-2 w-full md:w-auto rounded-full hover:bg-lime-400 transition-all">
-        {t("quote")}
-      </button>
+      <a href="https://wa.me/5551996236798" target="_blank">
+        <button className="bg-lime-500 text-zinc-950 px-6 py-2 w-full md:w-auto rounded-full hover:bg-lime-400 transition-all">
+          {t("quote")}
+        </button>
+      </a>
     </main>
   );
 }
