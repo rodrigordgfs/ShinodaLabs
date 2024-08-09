@@ -10,5 +10,23 @@
     "dev_fullstack": "Desenvolvedor Fullstack",
     "dev_web": "Desenvolvedor Web",
     "ui_ux": "UI/UX Designer"
+  },
+  "AboutPage": {
+    "title": "Sobre min",
+    "know_me": "Conheça quem sou",
+    "who_am_i": "Quem sou eu?",
+    "subtitle": "Sou o Rodrigo Shinoda, Desenvolvedor Fullstack Pleno",
+    "description": "Desenvolvedor fullstack com 6 anos de experiência em Vue.js, Nuxt.js, React.js, Next.js, NodeJS, NestJS, criando aplicações web robustas e interfaces escaláveis. Sempre atualizado com tendências e melhores práticas, busco novos desafios para aprimorar minhas habilidades. Valorizo a comunicação eficaz e o trabalho em equipe, acreditando na colaboração para resultados excepcionais.",
+    "name": "Nome",
+    "name_value": "Rodrigo Viegas Rodrigues",
+    "age": "Idade",
+    "years": "anos",
+    "email": "E-mail",
+    "email_value": "shinodalabs@gmail.com",
+    "city": "Cidade",
+    "city_value": "Camaquã / RS - Brasil",
+    "download_cv": "Baixar Currículo",
+    "what_i_do": "O que eu faço?",
+    "my_services": "Meus serviços"
   }
 }

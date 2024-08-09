@@ -6,16 +6,19 @@ import {
   HelpingHandIcon,
   TabletSmartphoneIcon,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function AbouteServices() {
+  const t = useTranslations("AboutPage");
+
   return (
     <div className="flex flex-col max-w-6xl w-full mx-auto px-4 gap-5">
       <div className="flex flex-col gap-2">
         <p className="text-base text-center md:text-start text-zinc-400 font-normal">
-          O que eu faço?
+          {t("what_i_do")}
         </p>
         <h1 className="font-bold text-5xl text-center md:text-start text-zinc-100">
-          Meus serviços
+          {t("my_services")}
         </h1>
       </div>
 

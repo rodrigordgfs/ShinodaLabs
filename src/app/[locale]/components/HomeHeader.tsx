@@ -7,23 +7,23 @@ export default function HomeHeader() {
   return (
     <header className="flex flex-row items-center justify-center py-12">
       <nav>
-        <ul className="flex flex-row space-x-6">
-          <li className="hover:text-lime-400 transition-all">
+        <ul className="flex flex-row space-x-6 items-center">
+          <li className="hover:text-lime-400 transition-all text-center">
             <Link href="/about" prefetch>
               {t("about")}
             </Link>
           </li>
-          <li className="hover:text-lime-400 transition-all">
+          <li className="hover:text-lime-400 transition-all text-center">
             <Link href="/resume" prefetch>
               {t("resume")}
             </Link>
           </li>
-          <li className="hover:text-lime-400 transition-all">
+          <li className="hover:text-lime-400 transition-all text-center">
             <Link href="/projects" prefetch>
               {t("projects")}
             </Link>
           </li>
-          <li className="hover:text-lime-400 transition-all">
+          <li className="hover:text-lime-400 transition-all text-center">
             <Link href="/contact" prefetch>
               {t("contact")}
             </Link>

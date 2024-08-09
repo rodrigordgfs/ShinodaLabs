@@ -8,8 +8,8 @@ export default function HomeContent() {
 
   return (
     <main className="flex-1 flex flex-col gap-6 items-center justify-center">
-      <h1 className="text-center font-bold text-6xl">Rodrigo Shinoda</h1>
-      <p className="text-center font-medium text-3xl">
+      <h1 className="text-center font-bold text-6xl">Shinoda Labs</h1>
+      <p className="text-center font-medium text-2xl md:text-3xl">
         {t("i_am")}{" "}
         <ReactTyped
           strings={[t("dev_fullstack"), t("dev_web"), t("ui_ux")]}
