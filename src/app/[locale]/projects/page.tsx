@@ -2,6 +2,47 @@ import Header from "@/components/Header";
 import type { Metadata } from "next";
 import Image from "next/image";
 import ProjectCard from "./components/ProjectCard";
+import projectsService from "@/services/projects";
+
+export interface Project {
+  id: string;
+  date: string;
+  title: string;
+  description: string;
+  tags: string[];
+  image: string;
+  link: string;
+  repository?: string | undefined;
+}
+
+interface ProjectsResponse {
+  data: Project[];
+  total: number;
+  page: number;
+  pageSize: number;
+  totalPages: number | null;
+}
+
+async function getProjects(): Promise<Project[]> {
+  try {
+    const res = await projectsService.get();
+
+    if (res.status !== 200) {
+      throw new Error("Failed to fetch data");
+    }
+
+    if (!res.data.data) {
+      throw new Error("Projects not found in the response");
+    }
+
+    const { data } = res.data as ProjectsResponse;
+
+    return data;
+  } catch (error) {
+    console.error("Error fetching projects:", error);
+    throw error;
+  }
+}
 
 export const metadata: Metadata = {
   title: "Projetos da Shinoda Labs - Soluções Digitais Inovadoras",
@@ -51,40 +92,9 @@ export const metadata: Metadata = {
   },
 };
 
-const projects = [
-  {
-    title: "Projeto 1",
-    image: "https://placehold.co/600x400",
-    link: "https://google.com",
-  },
-  {
-    title: "Projeto 2",
-    image: "https://placehold.co/600x400",
-    link: "https://google.com",
-  },
-  {
-    title: "Projeto 3",
-    image: "https://placehold.co/600x400",
-    link: "https://google.com",
-  },
-  {
-    title: "Projeto 1",
-    image: "https://placehold.co/600x400",
-    link: "https://google.com",
-  },
-  {
-    title: "Projeto 2",
-    image: "https://placehold.co/600x400",
-    link: "https://google.com",
-  },
-  {
-    title: "Projeto 3",
-    image: "https://placehold.co/600x400",
-    link: "https://google.com",
-  },
-];
+export default async function ProjectsPage() {
+  const projects = await getProjects();
 
-export default function ProjectsPage() {
   return (
     <div className="w-full max-w-6xl m-auto text-zinc-50 flex flex-col space-y-16 relative py-10">
       <Header title="Projetos" description="Conheça meus projetos" />

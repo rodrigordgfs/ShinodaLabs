@@ -11,6 +11,14 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'placehold.co'
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.imgur.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'rniscvxztrspzsoduaqy.supabase.co'
       }
     ],
     dangerouslyAllowSVG: true,
