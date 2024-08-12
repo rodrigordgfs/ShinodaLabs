@@ -34,3 +34,14 @@ model Experience {
 
   @@map("experience")
 }
+
+model Education {
+  id          String   @id @default(cuid())
+  school      String
+  course      String
+  description String
+  startDate   DateTime
+  endDate     DateTime
+
+  @@map("education")
+}

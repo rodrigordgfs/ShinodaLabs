@@ -5,8 +5,10 @@ import ProgressBar from "./components/ProgressBar";
 import ExperienceCard from "./components/ExperienceCard";
 import experienceService from "@/services/experiences";
 import ResumeMetadata from "./meta";
+import educationService from "@/services/education";
+import EducationCard from "./components/EducationCard";
 
-export interface Experience {
+interface Experience {
   id: string;
   title: string;
   company: string;
@@ -18,8 +20,23 @@ export interface Experience {
   skills: string[];
 }
 
+interface Education {
+  id: string;
+  course: string;
+  school: string;
+  startDate: string;
+  endDate: string;
+  description: string;
+}
 interface ExperiencesResponse {
   data: Experience[];
+  total: number;
+  page: number;
+  pageSize: number;
+  totalPages: number | null;
+}
+interface EducationResponse {
+  data: Education[];
   total: number;
   page: number;
   pageSize: number;
@@ -47,6 +64,27 @@ async function getExperiences(): Promise<Experience[]> {
   }
 }
 
+async function getEducations(): Promise<Education[]> {
+  try {
+    const res = await educationService.get();
+
+    if (res.status !== 200) {
+      throw new Error("Failed to fetch data");
+    }
+
+    if (!res.data.data) {
+      throw new Error("Educations not found in the response");
+    }
+
+    const { data } = res.data as EducationResponse;
+
+    return data;
+  } catch (error) {
+    console.error("Error fetching educations:", error);
+    throw error;
+  }
+}
+
 export const metadata: Metadata = ResumeMetadata;
 
 const skills = [
@@ -59,18 +97,17 @@ const skills = [
 ];
 
 export default async function ResumePage() {
-  // Promise.all([
-  //   getExperiences(),
-  //   getSkills(),
-  // ]);
-  const experiences = await getExperiences();
+  const [experiences, educations] = await Promise.all([
+    getExperiences(),
+    getEducations(),
+  ]);
 
   return (
     <div className="w-full max-w-full text-zinc-50 flex flex-col space-y-20 relative py-10">
       <Header title="Resumo" description="Conheça minhas habilidades" />
 
       <div className="flex flex-col md:flex-row max-w-6xl w-full mx-auto px-4 gap-10">
-      <div className="flex flex-col flex-1">
+        <div className="flex flex-col flex-1">
           <h2 className="font-medium text-2xl mb-6">Experiência</h2>
 
           <div className="divide-y divide-zinc-700 border-l-lime-400 border-l-4">
@@ -94,42 +131,18 @@ export default async function ResumePage() {
           <h2 className="font-medium text-2xl mb-6">Educação</h2>
 
           <div className="divide-y divide-zinc-700 border-l-lime-400 border-l-4">
-            <div className="relative bg-zinc-900 flex flex-col py-9 px-14 space-y-3">
-              <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -ml-[14px] w-6 h-6 bg-lime-400 rotate-45"></div>
-              <h3 className="font-medium text-xl">
-                Análise e desenvolvimento de sistemas
-              </h3>
-              <p className="font-normal text-sm">Unicid 2024 / 2026</p>
-              <p className="font-normal text-sm">
-                Id ea dolor duis officia culpa et ipsum Lorem eiusmod velit sunt
-                ad. Cupidatat cillum incididunt in aute amet enim proident
-                exercitation dolor laborum proident quis sunt consectetur.
-              </p>
-            </div>
-            <div className="relative bg-zinc-900 flex flex-col py-9 px-14 space-y-3">
-              <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -ml-[14px] w-6 h-6 bg-lime-400 rotate-45"></div>
-              <h3 className="font-medium text-xl">
-                Análise e desenvolvimento de sistemas
-              </h3>
-              <p className="font-normal text-sm">Unicid 2024 / 2026</p>
-              <p className="font-normal text-sm">
-                Id ea dolor duis officia culpa et ipsum Lorem eiusmod velit sunt
-                ad. Cupidatat cillum incididunt in aute amet enim proident
-                exercitation dolor laborum proident quis sunt consectetur.
-              </p>
-            </div>
-            <div className="relative bg-zinc-900 flex flex-col py-9 px-14 space-y-3">
-              <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -ml-[14px] w-6 h-6 bg-lime-400 rotate-45"></div>
-              <h3 className="font-medium text-xl">
-                Análise e desenvolvimento de sistemas
-              </h3>
-              <p className="font-normal text-sm">Unicid 2024 / 2026</p>
-              <p className="font-normal text-sm">
-                Id ea dolor duis officia culpa et ipsum Lorem eiusmod velit sunt
-                ad. Cupidatat cillum incididunt in aute amet enim proident
-                exercitation dolor laborum proident quis sunt consectetur.
-              </p>
-            </div>
+            {educations.map((education) => {
+              return (
+                <EducationCard
+                  key={education.id}
+                  course={education.course}
+                  endDate={education.endDate}
+                  school={education.school}
+                  startDate={education.startDate}
+                  description={education.description}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

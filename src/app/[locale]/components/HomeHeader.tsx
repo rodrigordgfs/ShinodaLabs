@@ -14,13 +14,13 @@ export default function HomeHeader() {
             </Link>
           </li>
           <li className="hover:text-lime-400 transition-all text-center">
-            <Link href="/resume" prefetch>
-              {t("resume")}
+            <Link href="/projects" prefetch>
+              {t("projects")}
             </Link>
           </li>
           <li className="hover:text-lime-400 transition-all text-center">
-            <Link href="/projects" prefetch>
-              {t("projects")}
+            <Link href="/resume" prefetch>
+              {t("resume")}
             </Link>
           </li>
           <li className="hover:text-lime-400 transition-all text-center">
