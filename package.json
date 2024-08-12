@@ -13,6 +13,7 @@
   "dependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@next/third-parties": "^14.2.5",
     "dayjs": "^1.11.12",
     "framer-motion": "^11.3.21",
     "husky": "^9.1.4",
