@@ -1,7 +1,7 @@
 {
   "Header": {
     "about": "Sobre",
-    "resume": "Resumo",
+    "resume": "Currículo",
     "projects": "Projetos",
     "contact": "Contato"
   },
@@ -29,5 +29,13 @@
     "download_cv": "Baixar Currículo",
     "what_i_do": "O que eu faço?",
     "my_services": "Meus serviços"
+  },
+  "ResumePage": {
+    "title": "Currículo",
+    "subtitle": "Conheça minhas habilidades",
+    "experience": "Experiência",
+    "education": "Educação",
+    "my_skills": "Minhas Habilidades",
+    "skill_subtitle": "Meu conhecimento com algumas ferramentas"
   }
 }

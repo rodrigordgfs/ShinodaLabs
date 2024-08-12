@@ -29,5 +29,13 @@
     "download_cv": "Descargar CV",
     "what_i_do": "¿Qué hago?",
     "my_services": "Mis servicios"
+  },
+  "ResumePage": {
+    "title": "Resumen",
+    "subtitle": "Conoce Mis Habilidades",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "my_skills": "Mis Habilidades",
+    "skill_subtitle": "Mi Conocimiento con Algunas Herramientas"
   }
 }

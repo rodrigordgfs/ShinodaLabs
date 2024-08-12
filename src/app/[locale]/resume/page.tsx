@@ -7,8 +7,12 @@ import experienceService from "@/services/experiences";
 import ResumeMetadata from "./meta";
 import educationService from "@/services/education";
 import EducationCard from "./components/EducationCard";
+import skillService from "@/services/skills";
+import { useTranslations } from "next-intl";
+import ExperienceEducation from "./components/ExperienceEducation";
+import Skills from "./components/Skills";
 
-interface Experience {
+export interface Experience {
   id: string;
   title: string;
   company: string;
@@ -20,7 +24,7 @@ interface Experience {
   skills: string[];
 }
 
-interface Education {
+export interface Education {
   id: string;
   course: string;
   school: string;
@@ -28,6 +32,13 @@ interface Education {
   endDate: string;
   description: string;
 }
+
+export interface Skill {
+  id: string;
+  name: string;
+  percentage: number;
+}
+
 interface ExperiencesResponse {
   data: Experience[];
   total: number;
@@ -35,8 +46,17 @@ interface ExperiencesResponse {
   pageSize: number;
   totalPages: number | null;
 }
+
 interface EducationResponse {
   data: Education[];
+  total: number;
+  page: number;
+  pageSize: number;
+  totalPages: number | null;
+}
+
+interface SkillResponse {
+  data: Skill[];
   total: number;
   page: number;
   pageSize: number;
@@ -85,84 +105,40 @@ async function getEducations(): Promise<Education[]> {
   }
 }
 
+async function getSkills(): Promise<Skill[]> {
+  try {
+    const res = await skillService.get();
+
+    if (res.status !== 200) {
+      throw new Error("Failed to fetch data");
+    }
+
+    if (!res.data.data) {
+      throw new Error("Educations not found in the response");
+    }
+
+    const { data } = res.data as SkillResponse;
+
+    return data;
+  } catch (error) {
+    console.error("Error fetching educations:", error);
+    throw error;
+  }
+}
+
 export const metadata: Metadata = ResumeMetadata;
 
-const skills = [
-  { skill: "HTML/CSS", percentage: 95 },
-  { skill: "React JS", percentage: 90 },
-  { skill: "Web Design", percentage: 80 },
-  { skill: "Express.js", percentage: 95 },
-  { skill: "JavaScript", percentage: 90 },
-  { skill: "TypeScript", percentage: 80 },
-];
-
 export default async function ResumePage() {
-  const [experiences, educations] = await Promise.all([
+  const [experiences, educations, skills] = await Promise.all([
     getExperiences(),
     getEducations(),
+    getSkills(),
   ]);
 
   return (
     <div className="w-full max-w-full text-zinc-50 flex flex-col space-y-20 relative py-10">
-      <Header title="Resumo" description="Conheça minhas habilidades" />
-
-      <div className="flex flex-col md:flex-row max-w-6xl w-full mx-auto px-4 gap-10">
-        <div className="flex flex-col flex-1">
-          <h2 className="font-medium text-2xl mb-6">Experiência</h2>
-
-          <div className="divide-y divide-zinc-700 border-l-lime-400 border-l-4">
-            {experiences.map((experience) => {
-              return (
-                <ExperienceCard
-                  key={experience.id}
-                  description={experience.description}
-                  company={experience.company}
-                  endDate={experience.endDate}
-                  location={experience.location}
-                  locationType={experience.locationType}
-                  startDate={experience.startDate}
-                  title={experience.title}
-                />
-              );
-            })}
-          </div>
-        </div>
-        <div className="flex flex-col flex-1">
-          <h2 className="font-medium text-2xl mb-6">Educação</h2>
-
-          <div className="divide-y divide-zinc-700 border-l-lime-400 border-l-4">
-            {educations.map((education) => {
-              return (
-                <EducationCard
-                  key={education.id}
-                  course={education.course}
-                  endDate={education.endDate}
-                  school={education.school}
-                  startDate={education.startDate}
-                  description={education.description}
-                />
-              );
-            })}
-          </div>
-        </div>
-      </div>
-
-      <div className="flex flex-col md:flex-col max-w-6xl w-full mx-auto px-4 gap-10">
-        <SubHeader
-          title="Minhas habilidades"
-          description="Meu conhecimento com algumas ferramentas"
-        />
-
-        <div className="flex flex-col max-w-6xl w-full mx-auto py-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
-            {skills.map((item, index) => (
-              <div key={index}>
-                <ProgressBar skill={item.skill} percentage={item.percentage} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <ExperienceEducation experiences={experiences} educations={educations} />
+      <Skills skills={skills} />
     </div>
   );
 }

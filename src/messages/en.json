@@ -29,5 +29,13 @@
     "download_cv": "Download CV",
     "what_i_do": "What I do?",
     "my_services": "My services"
+  },
+  "ResumePage": {
+    "title": "Summary",
+    "subtitle": "Get to Know My Skills",
+    "experience": "Experience",
+    "education": "Education",
+    "my_skills": "My Skills",
+    "skill_subtitle": "My Knowledge with Some Tools"
   }
 }

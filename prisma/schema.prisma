@@ -45,3 +45,11 @@ model Education {
 
   @@map("education")
 }
+
+model Skills {
+  id         String @id @default(cuid())
+  name       String
+  percentage Int
+
+  @@map("skills")
+}
