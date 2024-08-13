@@ -51,6 +51,7 @@
     "contact_info_message": "Siempre disponible para trabajos freelance si surge el proyecto adecuado, ¡no dudes en contactarme!",
     "location": "Ubicación",
     "phone": "Teléfono",
-    "mail": "Correo Electrónico"
+    "mail": "Correo Electrónico",
+    "email_sent": "¡Correo electrónico enviado exitosamente! Estaremos en contacto pronto."
   }
 }

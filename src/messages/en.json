@@ -51,6 +51,7 @@
     "contact_info_message": "Always available for freelance work if the right project comes along, don't hesitate to contact me!",
     "location": "Location",
     "phone": "Phone",
-    "mail": "Email"
+    "mail": "Email",
+    "email_sent": "Email sent successfully! We will be in touch soon."
   }
 }

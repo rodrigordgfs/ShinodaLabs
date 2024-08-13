@@ -1,8 +1,10 @@
-import { Poppins } from "next/font/google";
 import "./globals.css";
+import "react-toastify/dist/ReactToastify.css";
+import { Poppins } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { ToastContainer } from "react-toastify";
 import Transition from "./Transition";
 
 const poppins = Poppins({ weight: "400", style: "normal", subsets: ["latin"] });
@@ -24,6 +26,7 @@ export default async function LocaleLayout({
         </NextIntlClientProvider>
       </body>
       <GoogleAnalytics gaId={String(process.env.NEXT_PUBLIC_G_TAG)} />
+      <ToastContainer />
     </html>
   );
 }

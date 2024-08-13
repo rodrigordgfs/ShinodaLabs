@@ -2,7 +2,8 @@ import Header from "@/components/Header";
 import type { Metadata } from "next";
 import ContactMetadata from "./meta";
 import { useTranslations } from "next-intl";
-import { Mail, MapPin, Phone, User, User2 } from "lucide-react";
+import { Mail, MapPin, Phone, User2 } from "lucide-react";
+import FormEmail from "./components/FormEmail";
 
 export const metadata: Metadata = ContactMetadata;
 
@@ -16,36 +17,7 @@ export default function ContactPage() {
       <div className="flex flex-col md:flex-row max-w-6xl w-full mx-auto px-4 gap-10">
         <div className="flex flex-col flex-1 gap-7">
           <h2 className="font-medium text-2xl mb-6">{t("message_me")}</h2>
-
-          <form className="flex flex-col gap-7">
-            <div className="flex flex-col md:flex-row gap-7">
-              <input
-                type="text"
-                placeholder={t("name")}
-                className="w-full p-3 bg-zinc-800 text-zinc-400 flex-1 outline-none border-2 border-zinc-800 focus:border-b-lime-400 transition-all"
-              />
-              <input
-                type="email"
-                placeholder={t("email")}
-                className="w-full p-3 bg-zinc-800 text-zinc-400 flex-1 outline-none border-2 border-zinc-800 focus:border-b-lime-400 transition-all"
-              />
-            </div>
-            <input
-              type="text"
-              placeholder={t("subject")}
-              className="w-full p-3 bg-zinc-800 text-zinc-400 outline-none border-2 border-zinc-800 focus:border-b-lime-400 transition-all"
-            />
-            <textarea
-              placeholder={t("message")}
-              className="w-full p-3 bg-zinc-800 text-zinc-400 outline-none border-2 border-zinc-800 focus:border-b-lime-400 transition-all"
-            />
-            <button
-              type="submit"
-              className="bg-lime-400 text-zinc-900 px-4 py-3 hover:bg-lime-500 transition-all"
-            >
-              {t("send_message")}
-            </button>
-          </form>
+          <FormEmail />
         </div>
         <div className="flex flex-col flex-1 gap-7">
           <h2 className="font-medium text-2xl mb-6">{t("contact_info")}</h2>
