@@ -37,5 +37,20 @@
     "education": "Education",
     "my_skills": "My Skills",
     "skill_subtitle": "My Knowledge with Some Tools"
+  },
+  "ContactPage": {
+    "title": "Get in Touch",
+    "subtitle": "Feel free to contact me anytimes",
+    "message_me": "Message Me",
+    "contact_info": "Contact Info",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "send_message": "Send Message",
+    "contact_info_message": "Always available for freelance work if the right project comes along, don't hesitate to contact me!",
+    "location": "Location",
+    "phone": "Phone",
+    "mail": "Email"
   }
 }

@@ -11,7 +11,7 @@ export default function HomeFooter() {
   
   useEffect(() => {
     setLang(window.location.href.split('/')[3]);
-  }, [])
+  }, [pathName])
 
   return (
     <footer className="flex flex-row items-center justify-between pb-12">

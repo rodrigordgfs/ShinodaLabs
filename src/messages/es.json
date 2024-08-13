@@ -37,5 +37,20 @@
     "education": "Educación",
     "my_skills": "Mis Habilidades",
     "skill_subtitle": "Mi Conocimiento con Algunas Herramientas"
+  },
+  "ContactPage": {
+    "title": "Contáctame",
+    "subtitle": "No dudes en contactarme en cualquier momento",
+    "message_me": "Envíame un Mensaje",
+    "contact_info": "Información de Contacto",
+    "name": "Nombre",
+    "email": "Correo Electrónico",
+    "subject": "Asunto",
+    "message": "Mensaje",
+    "send_message": "Enviar Mensaje",
+    "contact_info_message": "Siempre disponible para trabajos freelance si surge el proyecto adecuado, ¡no dudes en contactarme!",
+    "location": "Ubicación",
+    "phone": "Teléfono",
+    "mail": "Correo Electrónico"
   }
 }
