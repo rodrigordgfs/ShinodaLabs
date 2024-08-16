@@ -5,6 +5,7 @@ import emailService from "@/services/email";
 import { useTranslations } from "next-intl";
 import { toast } from "react-toastify";
 import { z } from "zod";
+import { LoaderIcon } from "lucide-react";
 
 interface FormData {
   name: string;
@@ -29,6 +30,7 @@ export default function FormEmail() {
     subject: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
 
   const [errors, setErrors] = useState<Partial<FormData>>({});
 
@@ -45,6 +47,7 @@ export default function FormEmail() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setLoading(true);
     try {
       emailSchema.parse(formData);
     } catch (error) {
@@ -55,6 +58,7 @@ export default function FormEmail() {
             fieldErrors[err.path[0] as keyof FormData] = err.message;
           }
         });
+        setLoading(false);
         setErrors(fieldErrors);
         return;
       }
@@ -69,8 +73,10 @@ export default function FormEmail() {
         subject: "",
         message: "",
       });
+      setLoading(false);
       setErrors({});
     } catch (error) {
+      setLoading(false);
       toast.error(error as String);
     }
   };
@@ -83,6 +89,7 @@ export default function FormEmail() {
           name="name"
           placeholder={t("name")}
           value={formData.name}
+          disabled={loading}
           onChange={handleChange}
           className={`w-full p-3 bg-zinc-800 text-zinc-400 flex-1 outline-none border-2 focus:border-b-lime-400 transition-all ${
             errors.name
@@ -95,6 +102,7 @@ export default function FormEmail() {
           name="email"
           placeholder={t("email")}
           value={formData.email}
+          disabled={loading}
           onChange={handleChange}
           className={`w-full p-3 bg-zinc-800 text-zinc-400 flex-1 outline-none border-2 focus:border-b-lime-400 transition-all ${
             errors.email
@@ -108,6 +116,7 @@ export default function FormEmail() {
         name="subject"
         placeholder={t("subject")}
         value={formData.subject}
+        disabled={loading}
         onChange={handleChange}
         className={`w-full p-3 bg-zinc-800 text-zinc-400 flex-1 outline-none border-2 focus:border-b-lime-400 transition-all ${
           errors.subject
@@ -119,6 +128,7 @@ export default function FormEmail() {
         name="message"
         placeholder={t("message")}
         value={formData.message}
+        disabled={loading}
         onChange={handleChange}
         className={`w-full p-3 bg-zinc-800 text-zinc-400 flex-1 outline-none border-2 focus:border-b-lime-400 transition-all ${
           errors.message
@@ -128,9 +138,9 @@ export default function FormEmail() {
       />
       <button
         type="submit"
-        className="bg-lime-400 text-zinc-900 px-4 py-3 hover:bg-lime-500 transition-all"
+        className="flex flex-row items-center justify-center bg-lime-400 text-zinc-900 px-4 py-3 hover:bg-lime-500 transition-all"
       >
-        {t("send_message")}
+        {loading ? <LoaderIcon className="animate-spin" /> : t("send_message")}
       </button>
     </form>
   );
