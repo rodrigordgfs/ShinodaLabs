@@ -3,7 +3,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import resend from "@/libs/resend";
-import { applyCors } from "../middleware/cors";
 
 const emailSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -17,12 +16,19 @@ const handleError = (message: string) => {
 };
 
 export async function POST(req: NextRequest) {
-  const corsRes = applyCors(req);
+  const origin = req.headers.get('origin');
 
-  if (req.method === "OPTIONS") {
-    return corsRes;
+  // Define CORS headers
+  const headers = new Headers({
+    'Access-Control-Allow-Origin': origin || '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  });
+
+  // Handle preflight requests (OPTIONS)
+  if (req.method === 'OPTIONS') {
+    return new NextResponse(null, { status: 200, headers });
   }
-
   try {
     const body = await req.json();
     const parsedBody = emailSchema.parse(body);
