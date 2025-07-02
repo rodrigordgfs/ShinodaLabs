@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 
 // Dynamic imports for better performance
 const Header = dynamic(() => import('../components/Header'), { ssr: true })
-// const Hero = dynamic(() => import('../components/Hero'), { ssr: true })
+const Hero = dynamic(() => import('../components/Hero'), { ssr: true })
 // const About = dynamic(() => import('../components/About'), { ssr: false })
 // const Projects = dynamic(() => import('../components/Projects'), { ssr: false })
 // const Services = dynamic(() => import('../components/Services'), { ssr: false })
@@ -32,8 +32,8 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-zinc-950 text-white overflow-x-hidden">
       <Header />
-      {/* <Hero />
-      <About />
+      <Hero />
+      {/* <About />
       <Projects />
       <Services />
       <Contact />
