@@ -8,9 +8,9 @@ interface SEOHeadProps {
 }
 
 export default function SEOHead({
-  title = 'Desenvolvedor Full Stack | Portfólio Profissional',
+  title = 'ShinodaLabs - Desenvolvedor Full Stack | Portfólio Profissional',
   description = 'Desenvolvedor Full Stack especializado em React, Vue.js, Next.js e Nuxt.js. Criando experiências digitais modernas e inovadoras.',
-  canonical = 'https://seu-dominio.com',
+  canonical = 'https://shinodalabs.com.br',
   ogImage = '/og-image.jpg'
 }: SEOHeadProps) {
   return (
@@ -38,7 +38,7 @@ export default function SEOHead({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
-      <meta name="twitter:creator" content="@seuusuario" />
+      <meta name="twitter:creator" content="@r_shinodaa" />
 
       {/* SEO & Robots */}
       <meta name="author" content="Dev Portfolio" />
@@ -51,13 +51,12 @@ export default function SEOHead({
 
       {/* Favicons */}
       <link rel="icon" href="/favicon.ico" sizes="any" />
-      <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       <link rel="manifest" href="/manifest.json" />
 
       {/* Theme */}
-      <meta name="theme-color" content="#06b6d4" />
-      <meta name="msapplication-TileColor" content="#06b6d4" />
+      <meta name="theme-color" content="#9AE600" />
+      <meta name="msapplication-TileColor" content="#9AE600" />
 
       {/* Structured Data */}
       <script
@@ -71,17 +70,17 @@ export default function SEOHead({
             "description": "Desenvolvedor Full Stack especializado em React, Vue.js, Next.js e Nuxt.js",
             "url": canonical,
             "sameAs": [
-              "https://github.com/seuusuario",
-              "https://linkedin.com/in/seuusuario",
-              "https://twitter.com/seuusuario"
+              "https://github.com/rodrigordgfs",
+              "https://linkedin.com/in/shinodalabs",
+              "https://twitter.com/r_shinodaa"
             ],
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": "São Paulo",
+              "addressLocality": "Camaquã",
               "addressCountry": "BR"
             },
-            "email": "seu@email.com",
-            "telephone": "+5511999999999",
+            "email": "shinodalabs@gmail.com",
+            "telephone": "+5551996236798",
             "knowsAbout": [
               "React",
               "Vue.js",
