@@ -4,7 +4,7 @@ import { TypingText } from "../TypingText";
 export const HeroIntro = () => (
   <div className="mb-8">
     <div
-      className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-500/10 to-emerald-500/10 border border-teal-500/20 rounded-full text-teal-400 text-sm mb-8 backdrop-blur-xl shadow-lg shadow-teal-500/10"
+      className="hidden sm:inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-500/10 to-emerald-500/10 border border-teal-500/20 rounded-full text-teal-400 text-sm mb-8 backdrop-blur-xl shadow-lg shadow-teal-500/10"
       role="status"
       aria-label="Disponível para novos projetos"
     >
@@ -17,8 +17,6 @@ export const HeroIntro = () => (
     </div>
 
     <h2 className="text-5xl sm:text-6xl font-bold leading-snug text-white">
-      Olá, eu sou o
-      <br />
       <span className="bg-gradient-to-r from-teal-400 via-emerald-500 to-lime-500 bg-clip-text text-transparent animate-pulse">
         ShinodaLabs
       </span>
