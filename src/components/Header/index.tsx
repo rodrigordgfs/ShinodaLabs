@@ -62,11 +62,11 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="text-2xl font-bold text-white relative">
             <span className="text-emerald-400 animate-pulse">&lt;</span>
-            <span className="bg-gradient-to-r from-emerald-400 to-lime-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-lime-400 to-emerald-500 bg-clip-text text-transparent">
               ShinodaLabs
             </span>
             <span className="text-emerald-400 animate-pulse">/&gt;</span>
-            <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/20 to-lime-500/20 rounded-lg blur opacity-30"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-lime-500/20 to-emerald-500/20 rounded-lg blur opacity-30"></div>
           </div>
 
           {/* Desktop Menu */}
@@ -83,9 +83,9 @@ const Header = () => {
               >
                 {item.label}
                 {activeSection === item.id && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-emerald-400 to-lime-500 rounded-full shadow-lg shadow-emerald-400/50"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-lime-400 to-emerald-500 rounded-full shadow-lg shadow-emerald-400/50"></div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-lime-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-lime-500/10 to-emerald-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
             ))}
           </div>

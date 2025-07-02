@@ -95,7 +95,7 @@ const Projects = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           <h2 className="flex items-center justify-center text-5xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-teal-400 via-lime-500 to-lime-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-teal-400 via-emerald-500 to-lime-500 bg-clip-text text-transparent">
               Meus Projetos
             </span>
           </h2>
