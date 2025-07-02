@@ -139,12 +139,14 @@ const Projects = () => {
 
                 <div className="absolute bottom-2 left-4 right-4 flex justify-between opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                   <a
+                    aria-label={`Visitar ${project.title}`}
                     href={project.liveUrl}
                     className="cursor-pointer p-3 bg-gradient-to-r from-teal-500/20 to-lime-500/20 backdrop-blur-xl rounded-2xl border border-teal-500/30 hover:from-teal-500/30 hover:to-lime-500/30 hover:border-teal-400/50 transition-all duration-300 group/btn"
                   >
                     <ExternalLink className="w-4 h-4 text-teal-400 group-hover/btn:text-teal-300" />
                   </a>
                   <a
+                    
                     href={project.githubUrl}
                     className="cursor-pointer p-3 bg-gradient-to-r from-zinc-800/50 to-zinc-900/50 backdrop-blur-xl rounded-2xl border border-zinc-600/30 hover:from-zinc-700/50 hover:to-zinc-800/50 hover:border-zinc-500/50 transition-all duration-300 group/btn"
                   >
@@ -191,7 +193,7 @@ const Projects = () => {
         </div>
 
         <div className="text-center mt-16">
-          <button className="group relative px-8 py-4 bg-gradient-to-r from-teal-500 to-lime-600 text-white rounded-2xl font-semibold hover:from-teal-400 hover:to-lime-500 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/25 overflow-hidden">
+          <button aria-label="Ver todos os projetos" className="cursor-pointer group relative px-8 py-4 bg-gradient-to-r from-teal-500 to-lime-600 text-white rounded-2xl font-semibold hover:from-teal-400 hover:to-lime-500 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/25 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-teal-400/20 to-lime-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <span className="relative flex items-center gap-2">
               Ver Todos os Projetos

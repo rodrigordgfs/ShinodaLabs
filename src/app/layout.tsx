@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import dynamic from 'next/dynamic'
+const SEOHead = dynamic(() => import('@/components/SEOHead'), { ssr: true })
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -95,57 +97,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={inter.variable}>
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#06b6d4" />
-        <meta name="msapplication-TileColor" content="#06b6d4" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-        
-        {/* Preconnect to external domains */}
-        <link rel="preconnect" href="https://images.pexels.com" />
-        <link rel="dns-prefetch" href="https://images.pexels.com" />
-        
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Dev Portfolio",
-              "jobTitle": "Desenvolvedor Full Stack",
-              "description": "Desenvolvedor Full Stack especializado em React, Vue.js, Next.js e Nuxt.js",
-              "url": "https://seu-dominio.com",
-              "sameAs": [
-                "https://github.com/seuusuario",
-                "https://linkedin.com/in/seuusuario",
-                "https://twitter.com/seuusuario"
-              ],
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "São Paulo",
-                "addressCountry": "BR"
-              },
-              "email": "seu@email.com",
-              "telephone": "+5511999999999",
-              "knowsAbout": [
-                "React",
-                "Vue.js",
-                "Next.js",
-                "Nuxt.js",
-                "TypeScript",
-                "JavaScript",
-                "Node.js",
-                "Full Stack Development",
-                "UI/UX Design"
-              ]
-            })
-          }}
-        />
-      </head>
+      <SEOHead />
       <body className={`${inter.className} antialiased`}>
         {children}
       </body>

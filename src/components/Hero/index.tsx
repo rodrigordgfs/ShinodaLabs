@@ -130,6 +130,7 @@ const Hero = () => {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10 sm:mb-16">
           <button
+            aria-label="Navegar para projetos"
             onClick={() => scrollToSection("projects")}
             className="cursor-pointer flex items-center justify-center w-full sm:w-auto text-sm sm:text-base px-6 py-3 bg-gradient-to-r from-teal-500 to-emerald-600 text-white rounded-2xl font-semibold hover:from-teal-400 hover:to-emerald-500 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/25 overflow-hidden"
           >
@@ -140,13 +141,14 @@ const Hero = () => {
             </span>
           </button>
 
-          <button className="cursor-pointer w-full sm:w-auto text-sm sm:text-base px-6 py-3 border-2 border-teal-500/50 text-white rounded-2xl font-semibold hover:bg-teal-500/10 hover:border-teal-400 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-teal-500/20 overflow-hidden">
+          <button aria-label="Baixar CV" className="cursor-pointer w-full sm:w-auto text-sm sm:text-base px-6 py-3 border-2 border-teal-500/50 text-white rounded-2xl font-semibold hover:bg-teal-500/10 hover:border-teal-400 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-teal-500/20 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-teal-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <span className="relative">Download CV</span>
           </button>
         </div>
 
         <button
+          aria-label="Navegar para a seção Sobre"
           onClick={scrollToAbout}
           className="cursor-pointer group relative animate-bounce p-4 rounded-full bg-gradient-to-r from-teal-500/10 to-emerald-500/10 border border-teal-500/20 hover:from-teal-500/20 hover:to-emerald-500/20 hover:border-teal-400/50 transition-all duration-300 backdrop-blur-xl"
         >

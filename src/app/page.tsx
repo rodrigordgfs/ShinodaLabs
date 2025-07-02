@@ -7,8 +7,8 @@ const Hero = dynamic(() => import('../components/Hero'), { ssr: true })
 const About = dynamic(() => import('../components/About'), { ssr: true })
 const Projects = dynamic(() => import('../components/Projects'), { ssr: true })
 const Services = dynamic(() => import('../components/Services'), { ssr: true })
-// const Contact = dynamic(() => import('../components/Contact'), { ssr: false })
-// const Footer = dynamic(() => import('../components/Footer'), { ssr: true })
+const Contact = dynamic(() => import('../components/Contact'), { ssr: true })
+const Footer = dynamic(() => import('../components/Footer'), { ssr: true })
 
 export const metadata: Metadata = {
   title: 'Início',
@@ -36,8 +36,8 @@ export default function Home() {
       <About />
       <Projects />
       <Services />
-      {/* <Contact />
-      <Footer /> */}
+      <Contact />
+      <Footer />
     </main>
   )
 }

@@ -73,6 +73,7 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-8">
             {menuItems.map((item) => (
               <button
+                aria-label={`Navegar para ${item.label}`}
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`cursor-pointer relative px-4 py-2 text-sm font-medium transition-all duration-300 group ${
@@ -92,6 +93,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
+            aria-label="Abrir menu"
             className="cursor-pointer md:hidden text-zinc-400 hover:text-emerald-400 transition-colors p-2 rounded-lg hover:bg-emerald-500/10"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
@@ -104,6 +106,7 @@ const Header = () => {
           <div className="md:hidden mt-4 py-4 bg-zinc-900/95 rounded-2xl backdrop-blur-2xl border border-emerald-500/20 shadow-2xl shadow-emerald-500/10">
             {menuItems.map((item) => (
               <button
+                aria-label={`Navegar para ${item.label}`}
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`block w-full text-left px-6 py-3 text-sm font-medium transition-all duration-300 ${
