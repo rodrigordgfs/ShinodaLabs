@@ -13,7 +13,7 @@ export const CTASection = () => (
         </p>
         <button
           aria-label="Iniciar conversa sobre projeto"
-          className="group/btn relative px-8 py-4 bg-gradient-to-r from-teal-500 to-lime-600 text-white rounded-2xl font-semibold hover:from-teal-400 hover:to-lime-500 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/25 overflow-hidden"
+          className="cursor-pointer group/btn relative px-8 py-4 bg-gradient-to-r from-teal-500 to-lime-600 text-white rounded-2xl font-semibold hover:from-teal-400 hover:to-lime-500 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/25 overflow-hidden"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-teal-400/20 to-lime-500/20 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" aria-hidden="true" />
           <span className="relative flex items-center gap-2">

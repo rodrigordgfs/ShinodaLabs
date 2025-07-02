@@ -19,7 +19,7 @@ export const CallToAction = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:shinodalabs@gmail.com"
-              className="group/btn relative px-8 py-4 bg-gradient-to-r from-teal-500 to-emerald-600 text-white rounded-2xl font-semibold hover:from-teal-400 hover:to-emerald-500 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/25 overflow-hidden"
+              className="flex flex-row items-center justify-center gap-2 group/btn relative px-8 py-4 bg-gradient-to-r from-teal-500 to-emerald-600 text-white rounded-2xl font-semibold hover:from-teal-400 hover:to-emerald-500 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/25 overflow-hidden"
               aria-label="Enviar email para shinodalabs@gmail.com"
             >
               <Mail className="w-4 h-4" aria-hidden="true" />
@@ -27,7 +27,7 @@ export const CallToAction = () => {
             </a>
             <a
               href="tel:+5551996236798"
-              className="group/btn relative px-8 py-4 border-2 border-teal-500/50 text-white rounded-2xl font-semibold hover:bg-teal-500/10 hover:border-teal-400 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-teal-500/20 overflow-hidden"
+              className="flex flex-row items-center justify-center group/btn relative px-8 py-4 border-2 border-teal-500/50 text-white rounded-2xl font-semibold hover:bg-teal-500/10 hover:border-teal-400 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-teal-500/20 overflow-hidden"
               aria-label="Ligar para +55 (51) 9623 - 6798"
             >
               <Phone className="w-4 h-4" aria-hidden="true" />

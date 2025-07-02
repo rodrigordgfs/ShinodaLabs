@@ -16,7 +16,7 @@ export const HeroIntro = () => (
       />
     </div>
 
-    <h2 className="text-5xl sm:text-6xl font-bold mb-6 leading-snug text-white">
+    <h2 className="text-5xl sm:text-6xl font-bold leading-snug text-white">
       Olá, eu sou o
       <br />
       <span className="bg-gradient-to-r from-teal-400 via-emerald-500 to-lime-500 bg-clip-text text-transparent animate-pulse">

@@ -41,7 +41,7 @@ export const TypingText = () => {
   }, []);
 
   return (
-    <div className="h-6 flex items-center justify-center" aria-live="polite">
+    <div className="mb-4 flex items-center justify-center" aria-live="polite">
       <h3 className="text-lg sm:text-2xl text-zinc-300 font-light">
         <span className="bg-gradient-to-r from-teal-400 to-emerald-500 bg-clip-text text-transparent">
           {displayText}
