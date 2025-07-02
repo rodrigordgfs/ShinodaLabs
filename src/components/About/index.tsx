@@ -1,18 +1,10 @@
+// About.tsx
 "use client";
 
-import React from "react";
 import { Code, Zap, Target, Users, Cpu, Rocket } from "lucide-react";
 import { HighlightCard } from "./HighlightCard";
 import { TechBadge } from "./TechBadge";
-
-const technologies = [
-  "React",
-  "Vue.js",
-  "Next.js",
-  "Nuxt.js",
-  "TypeScript",
-  "Node.js",
-];
+import { techIcons } from "@/utils/techIcons";
 
 const highlights = [
   {
@@ -130,8 +122,8 @@ const About = () => (
               className="flex flex-wrap gap-3"
               aria-label="Tecnologias utilizadas"
             >
-              {technologies.map((tech) => (
-                <TechBadge key={tech} tech={tech} />
+              {Object.entries(techIcons).map(([tech, icon]) => (
+                <TechBadge key={tech} tech={tech} icon={icon} />
               ))}
             </ul>
           </div>

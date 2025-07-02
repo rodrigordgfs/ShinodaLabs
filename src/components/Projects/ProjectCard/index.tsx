@@ -1,5 +1,6 @@
-import { ExternalLink, Github, Star, Sparkles, Code } from 'lucide-react';
-import Image from 'next/image';
+import { techIcons } from "@/utils/techIcons";
+import { ExternalLink, Github, Star, Sparkles, Code } from "lucide-react";
+import Image from "next/image";
 
 type Project = {
   title: string;
@@ -25,7 +26,7 @@ export const ProjectCard = ({
   return (
     <li
       className={`project-items group relative bg-gradient-to-br from-zinc-900/50 to-zinc-800/30 backdrop-blur-xl rounded-3xl overflow-hidden border border-zinc-700/50 hover:border-teal-500/40 transition-all duration-500 hover:scale-105 ${
-        featured ? 'lg:col-span-2' : ''
+        featured ? "lg:col-span-2" : ""
       }`}
       aria-label={`Projeto ${title}`}
     >
@@ -46,6 +47,7 @@ export const ProjectCard = ({
           alt={`Screenshot do projeto ${title}`}
           width={800}
           height={600}
+          data-testid="project-image"
           className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
         />
         <figcaption className="absolute inset-0 bg-gradient-to-t from-zinc-900/90 via-zinc-900/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></figcaption>
@@ -77,13 +79,20 @@ export const ProjectCard = ({
           {description}
         </p>
 
-        <ul className="flex flex-wrap gap-2" aria-label="Tecnologias utilizadas">
+        <ul
+          className="flex flex-wrap gap-2"
+          aria-label="Tecnologias utilizadas"
+        >
           {tech.map((t) => (
             <li
               key={t}
               className="px-3 py-1 bg-gradient-to-r from-zinc-800/50 to-zinc-900/50 border border-zinc-700/50 rounded-lg text-xs text-zinc-300 hover:from-teal-500/10 hover:to-lime-500/10 hover:border-teal-500/30 hover:text-teal-300 transition-all duration-300 backdrop-blur-sm"
             >
-              {t}
+              <span className="flex items-center gap-2">
+                {/* Envolvemos o ícone com um <span> e atribuimos o data-testid */}
+                <span data-testid={`${t}-icon`}>{techIcons[t]}</span>
+                {t}
+              </span>
             </li>
           ))}
         </ul>
