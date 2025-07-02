@@ -24,7 +24,7 @@ export const ProjectCard = ({
 }: Project) => {
   return (
     <li
-      className={`group relative bg-gradient-to-br from-zinc-900/50 to-zinc-800/30 backdrop-blur-xl rounded-3xl overflow-hidden border border-zinc-700/50 hover:border-teal-500/40 transition-all duration-500 hover:scale-105 ${
+      className={`project-items group relative bg-gradient-to-br from-zinc-900/50 to-zinc-800/30 backdrop-blur-xl rounded-3xl overflow-hidden border border-zinc-700/50 hover:border-teal-500/40 transition-all duration-500 hover:scale-105 ${
         featured ? 'lg:col-span-2' : ''
       }`}
       aria-label={`Projeto ${title}`}
