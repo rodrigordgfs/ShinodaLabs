@@ -1,10 +1,17 @@
-import { MessageCircle } from "lucide-react";
+import React from "react";
+import { LucideIcon, MessageCircle } from "lucide-react";
 import { ContactItem } from "../ContactItem";
-import Contact from "..";
+
+export interface Contact {
+  icon: LucideIcon // tipo do ícone
+  label: string;
+  value: string;
+  color: string;
+}
 
 interface ContactProps {
   contacts: Contact[];
-} 
+}
 
 export const ContactInfo = ({ contacts }: ContactProps) => {
   return (
@@ -40,4 +47,4 @@ export const ContactInfo = ({ contacts }: ContactProps) => {
       </div>
     </section>
   );
-}
+};
