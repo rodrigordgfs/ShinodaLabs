@@ -1,8 +1,6 @@
 import '@testing-library/jest-dom'
 import type { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
-globalThis.IS_REACT_ACT_ENVIRONMENT = true;
-
 export function createMockRouter(overrides?: Partial<AppRouterInstance>): AppRouterInstance {
   return {
     push: jest.fn(),
