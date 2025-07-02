@@ -63,17 +63,17 @@ const About = () => {
             </div>
 
             <div>
-              <h3 className="text-4xl font-bold mb-6">
+              <h3 className="text-center sm:text-left text-4xl font-bold mb-6">
                 <span className="text-white">Desenvolvedor </span>
                 <span className="bg-gradient-to-r from-teal-400 to-lime-500 bg-clip-text text-transparent">Full Stack</span>
                 <span className="text-white"> Apaixonado por Tecnologia</span>
               </h3>
-              <p className="text-zinc-400 mb-6 leading-relaxed text-lg">
+              <p className="text-center sm:text-left text-zinc-400 mb-6 leading-relaxed text-lg">
                 Com mais de <span className="text-teal-400 font-semibold">5 anos de experiência</span> no desenvolvimento web, especializo-me em criar 
                 soluções digitais modernas e eficientes. Minha paixão é transformar ideias complexas 
                 em interfaces <span className="text-lime-400 font-semibold">intuitivas e funcionais</span>.
               </p>
-              <p className="text-zinc-400 mb-8 leading-relaxed text-lg">
+              <p className="text-center sm:text-left text-zinc-400 mb-8 leading-relaxed text-lg">
                 Trabalho principalmente com <span className="text-lime-400 font-semibold">React, Vue.js, Next.js e Nuxt.js</span>, sempre buscando 
                 as melhores práticas e as tecnologias mais atuais do mercado.
               </p>
@@ -98,7 +98,7 @@ const About = () => {
                 className="group relative p-6 bg-gradient-to-br from-zinc-800/30 to-zinc-900/30 backdrop-blur-xl rounded-3xl border border-zinc-700/50 hover:border-teal-500/40 transition-all duration-500 hover:scale-105 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-teal-500/5 to-lime-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative z-10">
+                <div className="flex flex-col items-center sm:items-start relative z-10">
                   <div className="text-teal-400 mb-4 group-hover:scale-110 group-hover:text-teal-300 transition-all duration-300">
                     {item.icon}
                   </div>

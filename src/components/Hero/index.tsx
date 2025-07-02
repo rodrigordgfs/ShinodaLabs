@@ -95,7 +95,7 @@ const Hero = () => {
             <div className="w-2 h-2 bg-teal-400 rounded-full animate-ping"></div>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-6 leading-snug">
+          <h1 className="text-5xl sm:text-6xl font-bold mb-6 leading-snug">
             <span className="text-white">Olá, eu sou o</span>
             <br />
             <span className="bg-gradient-to-r from-teal-400 via-emerald-500 to-lime-500 bg-clip-text text-transparent animate-pulse">

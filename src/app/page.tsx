@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 const Header = dynamic(() => import('../components/Header'), { ssr: true })
 const Hero = dynamic(() => import('../components/Hero'), { ssr: true })
 const About = dynamic(() => import('../components/About'), { ssr: true })
-// const Projects = dynamic(() => import('../components/Projects'), { ssr: false })
+const Projects = dynamic(() => import('../components/Projects'), { ssr: true })
 // const Services = dynamic(() => import('../components/Services'), { ssr: false })
 // const Contact = dynamic(() => import('../components/Contact'), { ssr: false })
 // const Footer = dynamic(() => import('../components/Footer'), { ssr: true })
@@ -34,8 +34,8 @@ export default function Home() {
       <Header />
       <Hero />
       <About />
-      {/* <Projects />
-      <Services />
+      <Projects />
+      {/* <Services />
       <Contact />
       <Footer /> */}
     </main>
