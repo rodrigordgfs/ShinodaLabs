@@ -50,12 +50,10 @@ export const services = [
 ];
 
 export const ServicesList = () => (
-  <ul
-    className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mb-20"
-    aria-label="Lista de serviços"
-  >
-    {services.map((service, index) => (
-      <ServiceCard key={index} {...service} />
+  <ul aria-label="Lista de serviços" role="list" className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+    {services.map((service) => (
+      <ServiceCard {...service} key={service.title} />
     ))}
   </ul>
 );
+

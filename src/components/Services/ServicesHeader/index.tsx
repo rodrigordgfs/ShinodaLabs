@@ -1,6 +1,15 @@
+import React from 'react';
+
 export const ServicesHeader = () => (
-  <header className="text-center mb-20">
-    <h3 className="text-5xl md:text-6xl font-bold mb-6 text-gradient bg-gradient-to-r from-teal-400 via-lime-500 to-emerald-500 bg-clip-text text-transparent">
+  <header
+    className="text-center mb-20"
+    aria-labelledby="services-title"
+    data-testid="services-header"
+  >
+    <h3
+      id="services-title"
+      className="text-5xl md:text-6xl font-bold mb-6 text-gradient bg-gradient-to-r from-teal-400 via-lime-500 to-emerald-500 bg-clip-text text-transparent"
+    >
       Serviços
     </h3>
     <div
@@ -8,7 +17,7 @@ export const ServicesHeader = () => (
       aria-hidden="true"
     />
     <p className="text-zinc-400 text-xl max-w-2xl mx-auto">
-      Soluções completas para transformar suas{" "}
+      Soluções completas para transformar suas{' '}
       <span className="text-teal-400">ideias em realidade digital</span>.
     </p>
   </header>

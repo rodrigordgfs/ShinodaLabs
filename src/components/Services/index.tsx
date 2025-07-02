@@ -11,9 +11,9 @@ const Services = () => {
     <section
       id="services"
       className="py-24 bg-zinc-900 relative overflow-hidden"
-      aria-labelledby="services-heading"
+      aria-labelledby="services-title"
     >
-      <h2 id="services-heading" className="sr-only">Seção de Serviços</h2>
+      <h2 id="services-title" className="sr-only">Seção de Serviços</h2>
       <ServicesBackground />
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto">

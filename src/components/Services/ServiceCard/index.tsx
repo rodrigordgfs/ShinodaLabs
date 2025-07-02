@@ -11,7 +11,7 @@ interface ServiceProps {
 
 export const ServiceCard = ({ title, description, icon, color, features }: ServiceProps) => (
   <li
-    className="group relative bg-gradient-to-br from-zinc-800/30 to-zinc-900/30 backdrop-blur-xl rounded-3xl p-8 border border-zinc-700/50 hover:border-teal-500/40 transition-all duration-500 hover:scale-105 overflow-hidden"
+    className="service-list-item group relative bg-gradient-to-br from-zinc-800/30 to-zinc-900/30 backdrop-blur-xl rounded-3xl p-8 border border-zinc-700/50 hover:border-teal-500/40 transition-all duration-500 hover:scale-105 overflow-hidden"
     aria-label={`Serviço de ${title}`}
   >
     <div
