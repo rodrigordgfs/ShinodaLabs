@@ -16,10 +16,10 @@ export const HighlightCard = ({
       <div className="text-teal-400 mb-4 group-hover:scale-110 group-hover:text-teal-300 transition-all duration-300">
         {icon}
       </div>
-      <h4 className="text-white font-semibold mb-2 text-lg group-hover:text-teal-100 transition-colors duration-300">
+      <h4 className="text-center sm:text-start text-white font-semibold mb-2 text-lg group-hover:text-teal-100 transition-colors duration-300">
         {title}
       </h4>
-      <p className="text-zinc-400 text-sm leading-relaxed group-hover:text-zinc-300 transition-colors duration-300">
+      <p className="text-center sm:text-start text-zinc-400 text-sm leading-relaxed group-hover:text-zinc-300 transition-colors duration-300">
         {description}
       </p>
     </div>
