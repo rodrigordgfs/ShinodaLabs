@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { HighlightCard } from '../HighlightCard'
+import { HighlightCard } from '.'
 import { Code } from 'lucide-react'
 
 describe('HighlightCard', () => {
