@@ -1,71 +1,38 @@
-import type { MetadataRoute } from "next";
+import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://seu-dominio.com'
+  
   return [
     {
-      url: "https://shinodalabs.com.br",
+      url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: "yearly",
+      changeFrequency: 'monthly',
       priority: 1,
-      alternates: {
-        languages: {
-          br: "https://shinodalabs.com.br/br",
-          en: "https://shinodalabs.com.br/en",
-          es: "https://shinodalabs.com.br/es",
-        },
-      },
     },
     {
-      url: "https://shinodalabs.com.br/about",
+      url: `${baseUrl}/#about`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
-      alternates: {
-        languages: {
-          br: "https://shinodalabs.com.br/br/about",
-          en: "https://shinodalabs.com.br/en/about",
-          es: "https://shinodalabs.com.br/es/about",
-        },
-      },
-    },
-    {
-      url: "https://shinodalabs.com.br/projects",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
+      changeFrequency: 'monthly',
       priority: 0.8,
-      alternates: {
-        languages: {
-          br: "https://shinodalabs.com.br/br/projects",
-          en: "https://shinodalabs.com.br/en/projects",
-          es: "https://shinodalabs.com.br/es/projects",
-        },
-      },
     },
     {
-      url: "https://shinodalabs.com.br/resume",
+      url: `${baseUrl}/#projects`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
-      alternates: {
-        languages: {
-          br: "https://shinodalabs.com.br/br/resume",
-          en: "https://shinodalabs.com.br/en/resume",
-          es: "https://shinodalabs.com.br/es/resume",
-        },
-      },
+      changeFrequency: 'weekly',
+      priority: 0.9,
     },
     {
-      url: "https://shinodalabs.com.br/contact",
+      url: `${baseUrl}/#services`,
       lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
-      alternates: {
-        languages: {
-          br: "https://shinodalabs.com.br/br/contact",
-          en: "https://shinodalabs.com.br/en/contact",
-          es: "https://shinodalabs.com.br/es/contact",
-        },
-      },
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
-  ];
+    {
+      url: `${baseUrl}/#contact`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+  ]
 }
