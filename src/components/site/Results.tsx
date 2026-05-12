@@ -27,9 +27,7 @@ export function Results() {
       <SectionBackdrop variant="dots" align="right" />
       <div className="relative mx-auto max-w-6xl px-5">
         <div className="max-w-2xl mb-14">
-          <div className="text-xs uppercase tracking-[0.2em] text-teal mb-4">
-            / Resultados
-          </div>
+          <div className="text-xs uppercase tracking-[0.2em] text-teal mb-4">/ Resultados</div>
           <h2 className="font-display text-4xl sm:text-5xl font-semibold leading-tight text-foreground">
             Números que falam por si.
           </h2>
@@ -47,9 +45,7 @@ export function Results() {
             >
               <div className="font-display text-4xl text-gradient-teal">{m.v}</div>
               <div className="text-sm text-foreground mt-3">{m.l}</div>
-              <div className="text-xs text-muted-foreground mt-1 font-mono">
-                {m.c}
-              </div>
+              <div className="text-xs text-muted-foreground mt-1 font-mono">{m.c}</div>
             </motion.div>
           ))}
         </div>
@@ -72,9 +68,7 @@ export function Results() {
               >
                 <path d="M7 7h4v4H7c0 2.2 1.8 4 4 4v2c-3.3 0-6-2.7-6-6V7zm9 0h4v4h-4c0 2.2 1.8 4 4 4v2c-3.3 0-6-2.7-6-6V7z" />
               </svg>
-              <blockquote className="text-foreground leading-relaxed">
-                {t.q}
-              </blockquote>
+              <blockquote className="text-foreground leading-relaxed">{t.q}</blockquote>
               <figcaption className="mt-6 text-sm">
                 <div className="text-foreground">{t.a}</div>
                 <div className="text-muted-foreground">{t.r}</div>

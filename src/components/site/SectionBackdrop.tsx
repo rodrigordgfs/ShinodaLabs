@@ -11,10 +11,7 @@ const alignStyles = {
   center: "left-[38%] top-16",
 };
 
-export function SectionBackdrop({
-  variant = "mesh",
-  align = "right",
-}: SectionBackdropProps) {
+export function SectionBackdrop({ variant = "mesh", align = "right" }: SectionBackdropProps) {
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
       <div className="section-vignette" />
@@ -56,12 +53,7 @@ export function SectionBackdrop({
       {variant === "mesh" && (
         <>
           <div className="absolute inset-0 bg-grid bg-grid-fade opacity-30" />
-          <div
-            className={cn(
-              "absolute h-[30rem] w-[30rem] section-mesh",
-              alignStyles[align],
-            )}
-          />
+          <div className={cn("absolute h-[30rem] w-[30rem] section-mesh", alignStyles[align])} />
         </>
       )}
     </div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
+import siteLogo from "@/assets/logo.png";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -80,9 +81,15 @@ export function Navbar() {
             className="group flex shrink-0 items-center gap-2 rounded-full py-1 pl-1 pr-2 sm:pr-3"
             onClick={() => setOpen(false)}
           >
-            <span className="relative flex h-8 w-8 items-center justify-center rounded-full bg-linear-to-br from-teal to-emerald shadow-[0_0_20px_-6px_oklch(0.78_0.14_180/0.7)]">
-              <span className="absolute inset-0 rounded-full bg-teal opacity-40 blur-md transition-opacity group-hover:opacity-70" />
-              <span className="relative font-display text-sm font-bold text-background">S</span>
+            <span className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-card/40 ring-1 ring-border/40">
+              <img
+                src={siteLogo}
+                alt=""
+                width={32}
+                height={32}
+                className="h-full w-full object-contain p-0.5"
+                decoding="async"
+              />
             </span>
             <span className="font-display text-sm font-semibold tracking-tight text-foreground sm:text-base">
               Shinoda<span className="text-muted-foreground">Labs</span>

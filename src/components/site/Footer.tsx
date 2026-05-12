@@ -1,5 +1,7 @@
 import { Github, Instagram, Linkedin, Mail } from "lucide-react";
 
+import siteLogo from "@/assets/logo.png";
+
 export function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-border/40 py-16">
@@ -11,8 +13,15 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-[1.2fr_0.8fr_1fr]">
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center gap-2 md:justify-start">
-              <span className="relative flex h-8 w-8 items-center justify-center rounded-md bg-linear-to-br from-teal to-emerald shadow-[0_0_28px_-8px_oklch(0.78_0.14_180/0.8)]">
-                <span className="font-display text-sm font-bold text-background">S</span>
+              <span className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-card/40 ring-1 ring-border/40">
+                <img
+                  src={siteLogo}
+                  alt=""
+                  width={32}
+                  height={32}
+                  className="h-full w-full object-contain p-0.5"
+                  decoding="async"
+                />
               </span>
               <span className="font-display text-lg font-semibold text-foreground">
                 Shinoda<span className="text-muted-foreground">Labs</span>

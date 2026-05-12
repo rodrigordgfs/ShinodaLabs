@@ -22,14 +22,15 @@ const groups = [
 
 export function Stack() {
   return (
-    <section id="stack" className="relative overflow-hidden py-32 bg-card/40 border-y border-border/40">
+    <section
+      id="stack"
+      className="relative overflow-hidden py-32 bg-card/40 border-y border-border/40"
+    >
       <div className="absolute inset-0 bg-grid bg-grid-fade opacity-50" />
       <SectionBackdrop variant="rings" align="right" />
       <div className="relative mx-auto max-w-6xl px-5">
         <div className="max-w-2xl mb-14">
-          <div className="text-xs uppercase tracking-[0.2em] text-teal mb-4">
-            / Stack
-          </div>
+          <div className="text-xs uppercase tracking-[0.2em] text-teal mb-4">/ Stack</div>
           <h2 className="font-display text-4xl sm:text-5xl font-semibold leading-tight text-foreground">
             Ferramentas modernas, escolhidas com intenção.
           </h2>

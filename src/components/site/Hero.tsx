@@ -116,8 +116,7 @@ export function Hero() {
                 </span>
               </h1>
               <p className="font-display mt-5 text-xl font-medium leading-snug tracking-tight text-foreground/90 sm:text-2xl sm:leading-snug">
-                Sites que{" "}
-                <span className="text-teal">vendem</span>
+                Sites que <span className="text-teal">vendem</span>
                 <span className="text-muted-foreground"> — </span>
                 <span className="text-muted-foreground">não só aparecem.</span>
               </p>

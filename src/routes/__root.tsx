@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 
+import siteLogo from "@/assets/logo.png";
 import appCss from "../styles.css?url";
 
 const SITE_URL = "https://shinodalabs.com";
@@ -138,6 +139,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "canonical",
         href: SITE_URL,
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        href: siteLogo,
+      },
+      {
+        rel: "apple-touch-icon",
+        href: siteLogo,
       },
     ],
   }),

@@ -1,12 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  Gauge,
-  Palette,
-  Search,
-  Smartphone,
-  Workflow,
-  ShieldCheck,
-} from "lucide-react";
+import { Gauge, Palette, Search, Smartphone, Workflow, ShieldCheck } from "lucide-react";
 import { SectionBackdrop } from "./SectionBackdrop";
 
 const items = [
@@ -48,9 +41,7 @@ export function Differentiators() {
       <SectionBackdrop variant="dots" align="center" />
       <div className="relative mx-auto max-w-6xl px-5">
         <div className="max-w-2xl mb-16">
-          <div className="text-xs uppercase tracking-[0.2em] text-teal mb-4">
-            / Diferenciais
-          </div>
+          <div className="text-xs uppercase tracking-[0.2em] text-teal mb-4">/ Diferenciais</div>
           <h2 className="font-display text-4xl sm:text-5xl font-semibold leading-tight text-foreground">
             Engenharia <span className="text-gradient-teal">de elite</span>, do conceito ao deploy.
           </h2>
