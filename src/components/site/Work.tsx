@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import p1 from "@/assets/project-1.png";
 import p2 from "@/assets/project-2.jpg";
-import p3 from "@/assets/project-3.jpg";
+import p3 from "@/assets/project-3.png";
 import p4 from "@/assets/project-4.jpg";
 import { SectionBackdrop } from "./SectionBackdrop";
 
@@ -19,12 +19,13 @@ const projects = [
   },
   {
     img: p3,
-    title: "Helix AI",
-    category: "Landing · IA",
+    title: "Lumière",
+    category: "Landing Page · Site",
     year: "2025",
-    desc: "Site institucional para startup de IA generativa, com motion cinematográfico.",
-    tags: ["Astro", "GSAP", "Three.js"],
+    desc: "Site institucional clínica odontológica em São Paulo.",
+    tags: ["React", "TanStack Start", "Tailwind CSS", "Framer Motion"],
     span: "lg:col-span-5",
+    url: "https://lumiere-self-psi.vercel.app/",
   },
   {
     img: p2,
