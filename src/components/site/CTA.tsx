@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Check } from "lucide-react";
 
+import { SectionBackdrop } from "./SectionBackdrop";
+
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -17,20 +19,35 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export function CTA() {
   return (
-    <section id="contact" className="relative overflow-hidden py-28">
-      <div className="absolute inset-x-0 top-0 h-px bg-border/60" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,oklch(1_0_0_/_0.03)_1px,transparent_1px)] bg-[size:120px_120px] opacity-50 [mask-image:linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]" />
+    <section
+      id="contact"
+      className="relative overflow-hidden bg-linear-to-b from-card/25 via-background to-background py-28 noise"
+    >
+      <div
+        className="pointer-events-none absolute inset-0 bg-(--gradient-hero) opacity-[0.85]"
+        aria-hidden
+      />
+      <SectionBackdrop variant="mesh" align="right" />
+      <div
+        className="pointer-events-none absolute -bottom-32 left-[-12%] h-[min(32rem,90vw)] w-[min(32rem,90vw)] rounded-full bg-emerald/14 blur-[120px]"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute top-[18%] right-[-8%] h-[min(26rem,70vw)] w-[min(26rem,70vw)] rounded-full bg-teal/12 blur-[100px]"
+        aria-hidden
+      />
+      <div className="absolute inset-x-0 top-0 z-10 h-px bg-border/60" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="relative mx-auto max-w-6xl px-5"
+        className="relative z-10 mx-auto max-w-6xl px-5"
       >
         <div>
           <div className="max-w-3xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-teal/20 bg-teal/10 px-3 py-1.5 font-mono text-xs uppercase tracking-[0.24em] text-teal shadow-[0_0_28px_-18px_oklch(0.78_0.14_180_/_0.9)]">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-teal/20 bg-teal/10 px-3 py-1.5 font-mono text-xs uppercase tracking-[0.24em] text-teal shadow-[0_0_28px_-18px_oklch(0.78_0.14_180/0.9)]">
               <span className="h-1.5 w-1.5 rounded-full bg-teal" />
               Briefing aberto
             </div>
