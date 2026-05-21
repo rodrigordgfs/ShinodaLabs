@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import p1 from "@/assets/project-1.png";
-import p2 from "@/assets/project-2.jpg";
+import p2 from "@/assets/project-2.png";
 import p3 from "@/assets/project-3.png";
 import p4 from "@/assets/project-4.jpg";
 import { SectionBackdrop } from "./SectionBackdrop";
@@ -29,11 +29,12 @@ const projects = [
   },
   {
     img: p2,
-    title: "Atelier Commerce",
-    category: "E-commerce",
-    year: "2024",
-    desc: "Marketplace headless premium com checkout customizado e CMS visual.",
-    tags: ["Shopify", "Hydrogen", "Sanity"],
+    title: "VLTGE",
+    category: "Site Empresarial · Academia",
+    year: "2025",
+    desc: "Site premium para academia de alta performance, com narrativa cinematográfica, modalidades, treinadores, contato e SEO técnico.",
+    tags: ["React", "TanStack Start", "Tailwind CSS", "Motion"],
+    url: "https://voltage-academia.vercel.app/",
     span: "lg:col-span-5",
   },
   {
@@ -68,7 +69,7 @@ export function Work() {
           </a>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-5">
+        <div className="space-y-5 lg:columns-2 lg:gap-5 lg:space-y-0">
           {projects.map((p, i) => (
             <motion.article
               key={p.title}
@@ -76,7 +77,7 @@ export function Work() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.6, delay: i * 0.05 }}
-              className={`group card-premium rounded-2xl overflow-hidden ${p.span} col-span-12`}
+              className="group mb-5 break-inside-avoid overflow-hidden rounded-2xl card-premium"
             >
               <div className="relative aspect-[16/10] overflow-hidden bg-secondary">
                 <img
