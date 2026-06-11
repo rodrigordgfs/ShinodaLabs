@@ -1,7 +1,5 @@
 import { Github, Instagram, Linkedin, Mail } from "lucide-react";
 
-import siteLogo from "@/assets/logo.png";
-
 export function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-border/40 py-16">
@@ -12,20 +10,15 @@ export function Footer() {
       <div className="relative mx-auto max-w-6xl px-5">
         <div className="grid gap-10 md:grid-cols-[1.2fr_0.8fr_1fr]">
           <div className="text-center md:text-left">
-            <div className="flex items-center justify-center gap-2 md:justify-start">
-              <span className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-card/40 ring-1 ring-border/40">
-                <img
-                  src={siteLogo}
-                  alt="Logo ShinodaLabs"
-                  width={32}
-                  height={32}
-                  className="h-full w-full object-contain p-0.5"
-                  decoding="async"
-                />
-              </span>
-              <span className="font-display text-lg font-semibold text-foreground">
-                Shinoda<span className="text-muted-foreground">Labs</span>
-              </span>
+            <div className="flex items-center justify-center md:justify-start">
+              <img
+                src="/logo.png"
+                alt="ShinodaLabs"
+                width={171}
+                height={38}
+                className="h-8 w-auto"
+                decoding="async"
+              />
             </div>
             <p className="mx-auto mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground md:mx-0">
               Estúdio digital independente. Construindo produtos premium para marcas ambiciosas.

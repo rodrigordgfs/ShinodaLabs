@@ -9,7 +9,6 @@ import {
 } from "@tanstack/react-router";
 import { Analytics } from "@vercel/analytics/react";
 
-import siteLogo from "@/assets/logo.png";
 import {
   buildCanonicalLink,
   buildMetaTags,
@@ -103,11 +102,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "icon",
         type: "image/png",
-        href: siteLogo,
+        href: "/favicon.png",
       },
       {
         rel: "apple-touch-icon",
-        href: siteLogo,
+        href: "/logo.png",
       },
       {
         rel: "sitemap",
