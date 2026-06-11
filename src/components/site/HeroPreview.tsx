@@ -109,7 +109,7 @@ export function HeroPreview() {
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-teal/80" aria-hidden />
               <span
                 key={project.url}
-                className={`truncate font-mono text-[10px] text-muted-foreground${hasSlid ? " hero-preview-meta" : ""}`}
+                className={`truncate font-mono text-[11px] text-muted-foreground${hasSlid ? " hero-preview-meta" : ""}`}
               >
                 {projectDomain(project.url)}
               </span>
@@ -127,7 +127,7 @@ export function HeroPreview() {
                 <span className="absolute inset-0 animate-ping rounded-full bg-teal opacity-70" />
                 <span className="relative h-1.5 w-1.5 rounded-full bg-teal" />
               </span>
-              <span className="max-w-[140px] truncate font-mono text-[10px] uppercase tracking-[0.16em] text-teal sm:max-w-none">
+              <span className="max-w-[140px] truncate font-mono text-[11px] uppercase tracking-[0.16em] text-primary sm:max-w-none">
                 {project.title}
               </span>
             </div>
@@ -156,27 +156,29 @@ export function HeroPreview() {
           <div className="pointer-events-none absolute inset-0 z-10 bg-linear-to-t from-[#030303]/55 via-transparent to-transparent" />
         </div>
 
-        <div className="flex items-center justify-center gap-1.5 border-t border-white/[0.06] bg-black/20 px-4 py-2.5">
+        <div className="flex items-center justify-center gap-1 border-t border-white/[0.06] bg-black/20 px-4 py-1">
           {heroProjects.map((item, i) => (
             <button
               key={item.title}
               type="button"
               onClick={() => handleSelectProject(i)}
-              className="group relative h-1.5 overflow-hidden rounded-full bg-white/10 transition-all duration-300 hover:bg-white/20"
-              style={{ width: i === index ? "1.75rem" : "0.375rem" }}
+              className="flex h-11 w-11 items-center justify-center rounded-full"
               aria-label={`Ver projeto ${item.title}`}
               aria-current={i === index ? "true" : undefined}
             >
-              {i === index && (
-                <span className="absolute inset-0 rounded-full bg-teal transition-all duration-300" />
-              )}
+              <span
+                className={`rounded-full transition-all duration-300 ${
+                  i === index ? "h-1.5 w-7 bg-teal" : "h-1.5 w-1.5 bg-white/25 hover:bg-white/40"
+                }`}
+                aria-hidden
+              />
             </button>
           ))}
         </div>
       </div>
 
       <div className="hero-preview-badge absolute -left-2 top-[18%] z-10 rounded-xl border border-white/[0.1] bg-background/80 px-3.5 py-2.5 shadow-xl shadow-black/40 backdrop-blur-xl sm:-left-8">
-        <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-teal">PageSpeed</div>
+        <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-primary">PageSpeed</div>
         <div className="mt-0.5 font-inter text-xl font-bold tabular-nums text-foreground">98</div>
       </div>
 
@@ -185,7 +187,7 @@ export function HeroPreview() {
           key={project.title}
           className={`rounded-xl border border-white/[0.1] bg-background/80 px-3.5 py-2.5 shadow-xl shadow-black/40 backdrop-blur-xl${hasSlid ? " hero-preview-meta" : ""}`}
         >
-          <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+          <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
             Stack
           </div>
           <div className="mt-0.5 font-inter text-sm font-semibold text-foreground">

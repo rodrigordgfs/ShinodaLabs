@@ -89,7 +89,7 @@ export function Work() {
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/0 to-transparent opacity-60" />
-                <div className="absolute top-4 left-4 glass rounded-full px-3 py-1 text-[11px] text-muted-foreground uppercase tracking-wider">
+                <div className="absolute top-4 left-4 glass rounded-full px-3 py-1 text-xs text-muted-foreground uppercase tracking-wider">
                   {p.category}
                 </div>
                 {p.url && (
@@ -98,9 +98,9 @@ export function Work() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={`Abrir site ${p.title}`}
-                    className="absolute top-4 right-4 glass rounded-full p-2 text-foreground opacity-0 group-hover:opacity-100 transition-opacity hover:text-teal"
+                    className="absolute top-4 right-4 flex h-11 w-11 items-center justify-center rounded-full border border-border/50 bg-card/80 text-foreground opacity-90 transition-opacity hover:border-teal/40 hover:text-teal sm:opacity-0 sm:group-hover:opacity-100"
                   >
-                    <ArrowUpRight className="h-4 w-4" />
+                    <ArrowUpRight className="h-4 w-4" aria-hidden />
                   </a>
                 )}
               </div>

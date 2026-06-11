@@ -35,7 +35,7 @@ export function Hero() {
               <span className="absolute inset-0 animate-ping rounded-full bg-teal opacity-75" />
               <span className="relative h-1.5 w-1.5 rounded-full bg-teal" />
             </span>
-            <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-teal sm:text-[11px]">
+            <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">
               Studio digital premium
             </span>
           </div>
@@ -66,7 +66,7 @@ export function Hero() {
                 key={label}
                 className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-3 py-1.5 text-xs text-muted-foreground backdrop-blur-sm"
               >
-                <Icon className="h-3.5 w-3.5 text-teal/80" aria-hidden />
+                <Icon className="h-3.5 w-3.5 text-primary" aria-hidden />
                 {label}
               </li>
             ))}
@@ -91,7 +91,8 @@ export function Hero() {
             >
               Ver projetos
               <ArrowRight
-                className="h-3.5 w-3.5 text-teal/70 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-teal"
+                className="h-3.5 w-3.5 text-primary transition-transform duration-300 group-hover:translate-x-1"
+                aria-hidden
                 aria-hidden
               />
             </a>
@@ -104,13 +105,13 @@ export function Hero() {
       </div>
 
       <a
-        href="#process"
-        className="hero-scroll-indicator absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-muted-foreground/60 transition-colors hover:text-muted-foreground"
-        aria-label="Rolar para o processo"
+        href="#work"
+        className="hero-scroll-indicator absolute bottom-6 left-1/2 z-10 flex min-h-11 min-w-11 -translate-x-1/2 flex-col items-center justify-center gap-2 p-2 text-muted-foreground transition-colors hover:text-foreground"
+        aria-label="Rolar para os projetos"
       >
-        <span className="font-mono text-[10px] uppercase tracking-[0.24em]">Scroll</span>
-        <span className="flex h-8 w-5 items-start justify-center rounded-full border border-white/15 pt-1.5">
-          <span className="hero-scroll-dot h-1 w-1 rounded-full bg-teal/80" />
+        <span className="font-mono text-[11px] uppercase tracking-[0.24em]">Scroll</span>
+        <span className="flex h-8 w-5 items-start justify-center rounded-full border border-white/25 pt-1.5">
+          <span className="hero-scroll-dot h-1 w-1 rounded-full bg-primary" />
         </span>
       </a>
     </section>

@@ -56,7 +56,7 @@ export function Stack() {
                     key={it}
                     className="text-sm text-muted-foreground font-mono flex items-center gap-2"
                   >
-                    <span className="text-teal/60">→</span> {it}
+                    <span className="text-primary" aria-hidden>→</span> {it}
                   </li>
                 ))}
               </ul>

@@ -22,7 +22,7 @@ export function Marquee() {
         {[...items, ...items].map((it, i) => (
           <div
             key={i}
-            className="px-8 text-sm tracking-wider uppercase text-muted-foreground/70 font-mono"
+            className="px-8 text-sm tracking-wider uppercase text-muted-foreground font-mono"
           >
             {it}
           </div>

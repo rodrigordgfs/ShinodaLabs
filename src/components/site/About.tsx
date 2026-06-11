@@ -38,7 +38,7 @@ export function About() {
                 Desenvolvedor de Sites · 7 anos de mercado
               </div>
             </div>
-            <div className="absolute top-4 right-4 glass rounded-full px-3 py-1 text-xs text-teal">
+            <div className="absolute top-4 right-4 glass rounded-full px-3 py-1 text-xs font-medium text-primary">
               ● Online
             </div>
           </div>

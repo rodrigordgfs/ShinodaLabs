@@ -62,7 +62,7 @@ export function Results() {
             >
               <svg
                 aria-hidden
-                className="h-6 w-6 text-teal/60 mb-4"
+                className="mb-4 h-6 w-6 text-primary"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >

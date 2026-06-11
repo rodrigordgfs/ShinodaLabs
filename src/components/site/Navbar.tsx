@@ -66,12 +66,14 @@ export function Navbar() {
         >
           <a
             href="#top"
+            aria-label="ShinodaLabs — voltar ao início"
             className="group flex shrink-0 items-center rounded-full py-1 pl-1 pr-2 sm:pr-3"
             onClick={() => setOpen(false)}
           >
             <img
               src="/logo.png"
-              alt="ShinodaLabs"
+              alt=""
+              aria-hidden
               width={152}
               height={34}
               className="h-7 w-auto sm:h-8"
@@ -85,7 +87,7 @@ export function Navbar() {
                 <li key={l.href}>
                   <a
                     href={l.href}
-                    className="block rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-card/90 hover:text-foreground"
+                    className="block min-h-11 rounded-full px-4 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-card/90 hover:text-foreground"
                   >
                     {l.label}
                   </a>
@@ -97,7 +99,7 @@ export function Navbar() {
           <div className="ml-auto flex items-center gap-2 sm:gap-2.5">
             <a
               href="#contact"
-              className="hidden items-center gap-1.5 rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background transition-colors hover:bg-teal md:inline-flex"
+              className="hidden min-h-11 items-center gap-1.5 rounded-full bg-foreground px-4 py-2.5 text-sm font-medium text-background transition-colors hover:bg-teal md:inline-flex"
             >
               Iniciar projeto
               <ArrowUpRight className="h-3.5 w-3.5 opacity-80" aria-hidden />
@@ -106,7 +108,7 @@ export function Navbar() {
               type="button"
               onClick={() => setOpen((v) => !v)}
               className={cn(
-                "inline-flex h-10 w-10 items-center justify-center rounded-full border transition-colors md:hidden",
+                "inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors md:hidden",
                 open
                   ? "border-teal/40 bg-teal/10 text-foreground"
                   : "border-border/50 bg-background/60 text-foreground hover:border-border hover:bg-card/60",

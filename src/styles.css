@@ -76,7 +76,7 @@
   --secondary: oklch(0.265 0.005 285); /* zinc-800 */
   --secondary-foreground: oklch(0.92 0.005 285);
   --muted: oklch(0.265 0.005 285);
-  --muted-foreground: oklch(0.65 0.005 285); /* zinc-400 */
+  --muted-foreground: oklch(0.74 0.005 285); /* zinc-300 — WCAG AA em fundo escuro */
   --accent: oklch(0.78 0.14 180);
   --accent-foreground: oklch(0.145 0.005 285);
   --destructive: oklch(0.65 0.22 27);
@@ -87,7 +87,7 @@
 
   --surface: oklch(0.205 0.005 285); /* zinc-900 */
   --surface-elevated: oklch(0.265 0.005 285); /* zinc-800 */
-  --teal: oklch(0.78 0.14 180); /* teal-400 #2dd4bf */
+  --teal: oklch(0.82 0.13 180); /* teal legível em fundo escuro */
   --teal-glow: oklch(0.72 0.15 180); /* teal-500 */
   --emerald: oklch(0.78 0.17 158); /* emerald-400 */
   --lime: oklch(0.86 0.21 130); /* lime-400 */
@@ -148,6 +148,11 @@
   .font-inter {
     font-family: "Inter", system-ui, sans-serif;
     font-feature-settings: "ss01", "cv11";
+  }
+
+  .touch-target {
+    min-height: 2.75rem;
+    min-width: 2.75rem;
   }
 
   .text-gradient {

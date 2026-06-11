@@ -27,7 +27,7 @@ export function Footer() {
               {["Criação de sites", "Landing pages", "SEO técnico"].map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-teal/20 bg-teal/10 px-3 py-1 text-xs text-teal"
+                  className="rounded-full border border-teal/30 bg-teal/15 px-3 py-1 text-xs font-medium text-primary"
                 >
                   {item}
                 </span>
@@ -62,20 +62,21 @@ export function Footer() {
             <div className="mb-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">
               Conecte
             </div>
-            <div className="flex justify-center gap-2 md:justify-start">
+            <div className="flex justify-center gap-3 md:justify-start">
               {[
-                { I: Github, h: "https://github.com/rodrigordgfs/" },
-                { I: Linkedin, h: "https://www.linkedin.com/in/shinoda-labs/" },
-                { I: Instagram, h: "https://instagram.com/shinodalabs/" },
-              ].map(({ I, h }, i) => (
+                { I: Github, h: "https://github.com/rodrigordgfs/", label: "GitHub da ShinodaLabs" },
+                { I: Linkedin, h: "https://www.linkedin.com/in/shinoda-labs/", label: "LinkedIn da ShinodaLabs" },
+                { I: Instagram, h: "https://instagram.com/shinodalabs/", label: "Instagram da ShinodaLabs" },
+              ].map(({ I, h, label }) => (
                 <a
-                  key={i}
+                  key={h}
                   href={h}
                   target="_blank"
-                  rel="noreferrer"
-                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-card/70 text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-teal/40 hover:text-teal hover:shadow-[0_0_30px_-14px_oklch(0.78_0.14_180/0.9)]"
+                  rel="noreferrer noopener"
+                  aria-label={label}
+                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-border bg-card/70 text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-teal/40 hover:text-teal hover:shadow-[0_0_30px_-14px_oklch(0.78_0.14_180/0.9)]"
                 >
-                  <I className="h-4 w-4" />
+                  <I className="h-4 w-4" aria-hidden />
                 </a>
               ))}
             </div>
