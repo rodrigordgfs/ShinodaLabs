@@ -93,7 +93,6 @@ export function Hero() {
               <ArrowRight
                 className="h-3.5 w-3.5 text-primary transition-transform duration-300 group-hover:translate-x-1"
                 aria-hidden
-                aria-hidden
               />
             </a>
           </div>
