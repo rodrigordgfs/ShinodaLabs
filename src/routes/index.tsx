@@ -1,11 +1,11 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
 import heroPreview from "@/assets/project-1.webp";
+import { LazyWhenVisible } from "@/components/LazyWhenVisible";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
 import { Footer } from "@/components/site/Footer";
-import { useDeferredMount } from "@/hooks/use-deferred-mount";
 import {
   HOME_DESCRIPTION,
   HOME_TITLE,
@@ -62,29 +62,49 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-function Index() {
-  const belowFoldReady = useDeferredMount(1800);
-  const cursorReady = useDeferredMount(2500);
+function DeferredCursor() {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(hover: hover) and (pointer: fine)");
+    if (!media.matches) return;
+
+    const enable = () => setReady(true);
+    window.addEventListener("pointermove", enable, { once: true, passive: true });
+    return () => window.removeEventListener("pointermove", enable);
+  }, []);
+
+  if (!ready) return null;
 
   return (
+    <Suspense fallback={null}>
+      <CustomCursor />
+    </Suspense>
+  );
+}
+
+function BelowFoldSections() {
+  return (
+    <Suspense fallback={null}>
+      <Marquee />
+      <About />
+      <Work />
+      <Differentiators />
+      <CTA />
+    </Suspense>
+  );
+}
+
+function Index() {
+  return (
     <div className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
-      {cursorReady && (
-        <Suspense fallback={null}>
-          <CustomCursor />
-        </Suspense>
-      )}
+      <DeferredCursor />
       <Navbar />
       <main id="conteudo-principal">
         <Hero />
-        {belowFoldReady && (
-          <Suspense fallback={null}>
-            <Marquee />
-            <About />
-            <Work />
-            <Differentiators />
-            <CTA />
-          </Suspense>
-        )}
+        <LazyWhenVisible rootMargin="400px 0px">
+          <BelowFoldSections />
+        </LazyWhenVisible>
       </main>
       <Footer />
     </div>

@@ -1,17 +1,7 @@
-import { lazy, Suspense } from "react";
 import { ArrowRight, ArrowUpRight, Gauge, Palette, Search } from "lucide-react";
 
-import { useDeferredMount } from "@/hooks/use-deferred-mount";
 import { HeroEffectsStatic } from "@/components/site/HeroEffects";
-import { HeroPreviewSkeleton } from "@/components/site/HeroPreview";
-
-const HeroEffects = lazy(() =>
-  import("@/components/site/HeroEffects").then((module) => ({ default: module.HeroEffects })),
-);
-
-const HeroPreview = lazy(() =>
-  import("@/components/site/HeroPreview").then((module) => ({ default: module.HeroPreview })),
-);
+import { HeroPreview } from "@/components/site/HeroPreview";
 
 const pillars = [
   { icon: Palette, label: "Design premium" },
@@ -20,20 +10,12 @@ const pillars = [
 ] as const;
 
 export function Hero() {
-  const effectsReady = useDeferredMount(1500);
-
   return (
     <section
       id="top"
       className="relative flex min-h-[100svh] items-center overflow-hidden bg-[#030303] noise"
     >
-      {effectsReady ? (
-        <Suspense fallback={<HeroEffectsStatic />}>
-          <HeroEffects />
-        </Suspense>
-      ) : (
-        <HeroEffectsStatic />
-      )}
+      <HeroEffectsStatic />
 
       <div className="section-light-beam pointer-events-none absolute z-[1] opacity-70" aria-hidden />
 
@@ -117,9 +99,7 @@ export function Hero() {
         </div>
 
         <div className="lg:col-span-6 xl:col-span-7">
-          <Suspense fallback={<HeroPreviewSkeleton />}>
-            <HeroPreview />
-          </Suspense>
+          <HeroPreview />
         </div>
       </div>
 
