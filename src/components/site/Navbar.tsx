@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -39,30 +38,20 @@ export function Navbar() {
   }, [open]);
 
   return (
-    <motion.header
-      initial={{ y: -16, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+    <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-[padding] duration-300",
         scrolled ? "pt-3 md:pt-3" : "pt-4 md:pt-5",
       )}
     >
-      <AnimatePresence>
-        {open && (
-          <motion.button
-            type="button"
-            key="nav-backdrop"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-background/75 backdrop-blur-sm md:hidden"
-            aria-label="Fechar menu"
-            onClick={() => setOpen(false)}
-          />
-        )}
-      </AnimatePresence>
+      {open && (
+        <button
+          type="button"
+          className="fixed inset-0 z-40 bg-background/75 backdrop-blur-sm md:hidden"
+          aria-label="Fechar menu"
+          onClick={() => setOpen(false)}
+        />
+      )}
 
       <div className="relative z-50 mx-auto max-w-6xl px-4 sm:px-5">
         <nav
@@ -131,44 +120,37 @@ export function Navbar() {
           </div>
         </nav>
 
-        <AnimatePresence>
-          {open && (
-            <motion.div
-              id="mobile-nav"
-              key="mobile-nav"
-              initial={{ opacity: 0, y: -10, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -8, scale: 0.98 }}
-              transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute inset-x-3 top-[calc(100%+0.5rem)] overflow-hidden rounded-2xl border border-border/50 bg-background/90 p-2 shadow-xl shadow-black/30 backdrop-blur-xl sm:inset-x-4 md:hidden"
-            >
-              <ul className="flex flex-col gap-0.5">
-                {links.map((l) => (
-                  <li key={l.href}>
-                    <a
-                      href={l.href}
-                      onClick={() => setOpen(false)}
-                      className="block rounded-xl px-4 py-3.5 text-base font-medium text-muted-foreground transition-colors hover:bg-card/80 hover:text-foreground"
-                    >
-                      {l.label}
-                    </a>
-                  </li>
-                ))}
-                <li className="mt-1 border-t border-border/40 pt-2">
+        {open && (
+          <div
+            id="mobile-nav"
+            className="absolute inset-x-3 top-[calc(100%+0.5rem)] overflow-hidden rounded-2xl border border-border/50 bg-background/90 p-2 shadow-xl shadow-black/30 backdrop-blur-xl sm:inset-x-4 md:hidden"
+          >
+            <ul className="flex flex-col gap-0.5">
+              {links.map((l) => (
+                <li key={l.href}>
                   <a
-                    href="#contact"
+                    href={l.href}
                     onClick={() => setOpen(false)}
-                    className="flex items-center justify-center gap-2 rounded-full bg-foreground py-3 text-base font-medium text-background transition-colors hover:bg-teal"
+                    className="block rounded-xl px-4 py-3.5 text-base font-medium text-muted-foreground transition-colors hover:bg-card/80 hover:text-foreground"
                   >
-                    Iniciar projeto
-                    <ArrowUpRight className="h-4 w-4" aria-hidden />
+                    {l.label}
                   </a>
                 </li>
-              </ul>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              ))}
+              <li className="mt-1 border-t border-border/40 pt-2">
+                <a
+                  href="#contact"
+                  onClick={() => setOpen(false)}
+                  className="flex items-center justify-center gap-2 rounded-full bg-foreground py-3 text-base font-medium text-background transition-colors hover:bg-teal"
+                >
+                  Iniciar projeto
+                  <ArrowUpRight className="h-4 w-4" aria-hidden />
+                </a>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
-    </motion.header>
+    </header>
   );
 }

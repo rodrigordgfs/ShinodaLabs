@@ -7,8 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { Analytics } from "@vercel/analytics/react";
-
+import { DeferredAnalytics } from "@/components/site/DeferredAnalytics";
 import {
   buildCanonicalLink,
   buildMetaTags,
@@ -123,7 +122,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
       <body>
         {children}
         <Scripts />
-        <Analytics />
+        <DeferredAnalytics />
       </body>
     </html>
   );

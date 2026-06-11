@@ -8,12 +8,8 @@
 @import "@fontsource/inter/700.css";
 @import "@fontsource/inter/800.css";
 @import "@fontsource/sora/400.css";
-@import "@fontsource/sora/500.css";
 @import "@fontsource/sora/600.css";
-@import "@fontsource/sora/700.css";
 @import "@fontsource/jetbrains-mono/400.css";
-@import "@fontsource/jetbrains-mono/500.css";
-@import "@fontsource/jetbrains-mono/600.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -359,5 +355,55 @@
   }
   .animate-marquee {
     animation: scroll-x 30s linear infinite;
+  }
+
+  .hero-underline {
+    transform: scaleX(0);
+    animation: hero-underline-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+  }
+
+  .hero-scroll-indicator {
+    animation: hero-fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
+  }
+
+  .hero-scroll-dot {
+    animation: hero-scroll-bob 1.8s ease-in-out infinite;
+  }
+
+  @keyframes hero-underline-in {
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes hero-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes hero-scroll-bob {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(6px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-underline,
+    .hero-scroll-indicator,
+    .hero-scroll-dot {
+      animation: none;
+    }
+
+    .hero-underline {
+      transform: scaleX(1);
+    }
   }
 }
