@@ -129,6 +129,11 @@
     letter-spacing: -0.02em;
   }
 
+  .font-inter {
+    font-family: "Inter", system-ui, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+  }
+
   .text-gradient {
     background: var(--gradient-vibrant);
     -webkit-background-clip: text;

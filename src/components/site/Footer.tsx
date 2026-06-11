@@ -16,7 +16,7 @@ export function Footer() {
               <span className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-card/40 ring-1 ring-border/40">
                 <img
                   src={siteLogo}
-                  alt=""
+                  alt="Logo ShinodaLabs"
                   width={32}
                   height={32}
                   className="h-full w-full object-contain p-0.5"
