@@ -3,7 +3,6 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "vite.config.ts",
-    "vite.config.vercel.ts",
     "eslint.config.js"
   ],
   "compilerOptions": {

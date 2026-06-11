@@ -3,10 +3,13 @@
   "private": true,
   "sideEffects": false,
   "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "build:vercel": "vite build --config vite.config.vercel.ts",
+    "build:vercel": "VERCEL=1 vite build",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
