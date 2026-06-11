@@ -40,11 +40,12 @@ const projects = [
   {
     img: p4,
     title: "Aurelius Imobiliária",
-    category: "App · Fintech",
-    year: "2024",
-    desc: "App nativo para gestão financeira pessoal com UX impecável.",
-    tags: ["React Native", "Expo", "Supabase"],
+    category: "Site Empresarial · Imobiliária",
+    year: "2025",
+    desc: "Site institucional para imobiliária em Porto Alegre.",
+    tags: ["React", "TanStack Start", "Tailwind CSS"],
     span: "lg:col-span-7",
+    url: "https://aurelius-imobiliaria.vercel.app/",
   },
 ];
 
