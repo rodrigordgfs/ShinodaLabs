@@ -73,7 +73,7 @@ export function Footer() {
               {[
                 { I: Github, h: "https://github.com/rodrigordgfs/" },
                 { I: Linkedin, h: "https://www.linkedin.com/in/shinoda-labs/" },
-                { I: Instagram, h: "https://instagram.com/r_shinodaa/" },
+                { I: Instagram, h: "https://instagram.com/shinodalabs/" },
               ].map(({ I, h }, i) => (
                 <a
                   key={i}

@@ -9,7 +9,7 @@ export const SITE_PHONE = "+5551996236798";
 export const SOCIAL_PROFILES = [
   "https://github.com/rodrigordgfs/",
   "https://www.linkedin.com/in/shinoda-labs/",
-  "https://instagram.com/r_shinodaa/",
+  "https://instagram.com/shinodalabs/",
 ] as const;
 
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/logo.png`;
