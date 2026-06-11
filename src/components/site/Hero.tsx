@@ -9,11 +9,11 @@ import {
 } from "framer-motion";
 import { ArrowRight, ArrowUpRight, Gauge, Palette, Search } from "lucide-react";
 
-import heroBg from "@/assets/hero-bg.jpg";
-import p1 from "@/assets/project-1.png";
-import p2 from "@/assets/project-2.png";
-import p3 from "@/assets/project-3.png";
-import p4 from "@/assets/project-4.jpg";
+import heroBg from "@/assets/hero-bg.webp";
+import p1 from "@/assets/project-1.webp";
+import p2 from "@/assets/project-2.webp";
+import p3 from "@/assets/project-3.webp";
+import p4 from "@/assets/project-4.webp";
 
 const easeOut = [0.16, 1, 0.3, 1] as const;
 
@@ -136,9 +136,11 @@ function HeroPreview() {
   const [index, setIndex] = useState(0);
   const [flash, setFlash] = useState(false);
   const intervalRef = useRef<number | null>(null);
+  const hasSlid = useRef(false);
   const project = heroProjects[index];
 
   const goToProject = useCallback((nextIndex: number) => {
+    hasSlid.current = true;
     setFlash(true);
     setIndex(nextIndex);
     window.setTimeout(() => setFlash(false), 500);
@@ -147,6 +149,7 @@ function HeroPreview() {
   const startAutoplay = useCallback(() => {
     if (intervalRef.current) window.clearInterval(intervalRef.current);
     intervalRef.current = window.setInterval(() => {
+      hasSlid.current = true;
       setFlash(true);
       setIndex((current) => (current + 1) % heroProjects.length);
       window.setTimeout(() => setFlash(false), 500);
@@ -172,6 +175,8 @@ function HeroPreview() {
   return (
     <motion.div
       variants={previewVariants}
+      initial={false}
+      animate="visible"
       className="relative mx-auto w-full max-w-md lg:max-w-none [perspective:1200px]"
     >
       <div className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-teal/10 blur-3xl" aria-hidden />
@@ -238,12 +243,13 @@ function HeroPreview() {
               src={project.img}
               alt={`Preview do projeto ${project.title}`}
               variants={previewSlideVariants}
-              initial="enter"
+              initial={hasSlid.current ? "enter" : false}
               animate="center"
               exit="exit"
               className="absolute inset-0 size-full min-h-full min-w-full object-cover object-center"
-              loading="eager"
+              loading={index === 0 ? "eager" : "lazy"}
               decoding="async"
+              fetchPriority={index === 0 ? "high" : "low"}
             />
           </AnimatePresence>
 
@@ -403,13 +409,14 @@ export function Hero() {
 
       <motion.div
         variants={containerVariants}
-        initial="hidden"
+        initial={false}
         animate="visible"
         className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-14 px-5 pb-24 pt-28 sm:px-6 sm:pb-28 sm:pt-32 lg:grid-cols-12 lg:gap-10 lg:pb-32 lg:pt-36"
       >
         <div className="flex flex-col items-center text-center lg:col-span-6 lg:items-start lg:text-left xl:col-span-5">
           <motion.div
             variants={fadeUpVariants}
+            initial={false}
             className="inline-flex items-center gap-2.5 rounded-full border border-teal/20 bg-teal/[0.07] px-3.5 py-1.5 shadow-[0_0_28px_-18px_oklch(0.78_0.14_180/0.85)] backdrop-blur-md"
           >
             <span className="relative flex h-1.5 w-1.5">
@@ -422,10 +429,10 @@ export function Hero() {
           </motion.div>
 
           <h1 className="font-inter mt-7 text-[clamp(2.35rem,6.8vw,4.25rem)] font-extrabold leading-[1.03] tracking-[-0.045em] sm:mt-8 lg:text-[3.65rem] lg:leading-[1.02]">
-            <motion.span variants={lineVariants} className="block overflow-hidden text-foreground">
+            <motion.span variants={lineVariants} initial={false} className="block overflow-hidden text-foreground">
               <span className="block">Sites que transformam</span>
             </motion.span>
-            <motion.span variants={lineVariants} className="block overflow-hidden">
+            <motion.span variants={lineVariants} initial={false} className="block overflow-hidden">
               <span className="block">
                 <span className="text-muted-foreground">visitantes em </span>
                 <span className="relative inline-block text-teal">
@@ -444,6 +451,7 @@ export function Hero() {
 
           <motion.p
             variants={fadeUpVariants}
+            initial={false}
             className="font-inter mt-6 max-w-lg text-pretty text-base leading-relaxed tracking-[-0.01em] text-muted-foreground sm:mt-7 sm:text-lg"
           >
             Criação de sites sob medida para{" "}
@@ -453,6 +461,7 @@ export function Hero() {
 
           <motion.ul
             variants={fadeUpVariants}
+            initial={false}
             className="mt-7 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 lg:justify-start"
           >
             {pillars.map(({ icon: Icon, label }) => (
@@ -468,6 +477,7 @@ export function Hero() {
 
           <motion.div
             variants={fadeUpVariants}
+            initial={false}
             className="mt-9 flex w-full flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start"
           >
             <motion.a

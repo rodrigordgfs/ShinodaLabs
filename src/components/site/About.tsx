@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Code2, Layers, Rocket, Sparkle } from "lucide-react";
-import avatar from "@/assets/avatar.png";
+import avatar from "@/assets/avatar.webp";
 import { SectionBackdrop } from "./SectionBackdrop";
 
 const skills = [

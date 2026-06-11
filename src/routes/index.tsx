@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+
+import heroPreview from "@/assets/project-1.webp";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
 import { Marquee } from "@/components/site/Marquee";
@@ -25,7 +27,16 @@ export const Route = createFileRoute("/")({
       keywords: SITE_KEYWORDS,
       path: "/",
     }),
-    links: [buildCanonicalLink("/")],
+    links: [
+      buildCanonicalLink("/"),
+      {
+        rel: "preload",
+        as: "image",
+        href: heroPreview,
+        type: "image/webp",
+        fetchPriority: "high",
+      },
+    ],
   }),
 });
 

@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import p1 from "@/assets/project-1.png";
-import p2 from "@/assets/project-2.png";
-import p3 from "@/assets/project-3.png";
-import p4 from "@/assets/project-4.jpg";
+import p1 from "@/assets/project-1.webp";
+import p2 from "@/assets/project-2.webp";
+import p3 from "@/assets/project-3.webp";
+import p4 from "@/assets/project-4.webp";
 import { SectionBackdrop } from "./SectionBackdrop";
 
 const projects = [
