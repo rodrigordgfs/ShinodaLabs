@@ -29,9 +29,9 @@ const heroProjects = [
   },
   {
     img: p4,
-    title: "Pulse Mobile",
+    title: "Aurelius Imobiliária",
     url: "#",
-    tags: ["React Native", "Expo", "Supabase"],
+    tags: ["React", "TanStack Start", "Tailwind CSS"],
   },
 ] as const;
 

@@ -39,7 +39,7 @@ const projects = [
   },
   {
     img: p4,
-    title: "Pulse Mobile",
+    title: "Aurelius Imobiliária",
     category: "App · Fintech",
     year: "2024",
     desc: "App nativo para gestão financeira pessoal com UX impecável.",
