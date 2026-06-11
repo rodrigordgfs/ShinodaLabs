@@ -1,15 +1,16 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import p1 from "@/assets/project-1.webp";
 import p2 from "@/assets/project-2.webp";
 import p3 from "@/assets/project-3.webp";
 import p4 from "@/assets/project-4.webp";
 
 const PROJECT_INTERVAL_MS = 5000;
 
+const HERO_PREVIEW_URL = "/hero-preview.webp";
+
 const heroProjects = [
   {
-    img: p1,
+    img: HERO_PREVIEW_URL,
     title: "Alma & Pata",
     url: "https://alma-pata.vercel.app/",
     tags: ["React", "TanStack Start", "Framer Motion"],

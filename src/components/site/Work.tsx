@@ -84,6 +84,8 @@ export function Work() {
                   src={p.img}
                   alt={p.title}
                   loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/0 to-transparent opacity-60" />

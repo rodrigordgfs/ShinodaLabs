@@ -27,6 +27,8 @@ export function About() {
               src={avatar}
               alt="Fundador ShinodaLabs"
               loading="lazy"
+              decoding="async"
+              fetchPriority="low"
               className="absolute inset-0 h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
