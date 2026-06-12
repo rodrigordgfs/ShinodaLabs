@@ -48,7 +48,7 @@ Landing page de página única com SSR (Server-Side Rendering), animações flui
 
 ```bash
 # Clonar o repositório
-git clone https://github.com/rodrigordgfs/ShinodaLabs.git
+git clone https://github.com/ShinodaLabs/ShinodaLabs.git
 cd ShinodaLabs
 
 # Instalar dependências

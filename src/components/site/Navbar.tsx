@@ -4,8 +4,8 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "#work", label: "Projetos" },
   { href: "#about", label: "Sobre" },
+  { href: "#work", label: "Projetos" },
   { href: "#contact", label: "Contato" },
 ] as const;
 

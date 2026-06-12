@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import p2 from "@/assets/project-2.webp";
 import p3 from "@/assets/project-3.webp";
 import p4 from "@/assets/project-4.webp";
+import p5 from "@/assets/project-5.webp";
 
 const PROJECT_INTERVAL_MS = 5000;
 
@@ -30,7 +31,13 @@ const heroProjects = [
   {
     img: p4,
     title: "Aurelius Imobiliária",
-    url: "#",
+    url: "https://aurelius-imobiliaria.vercel.app/",
+    tags: ["React", "TanStack Start", "Tailwind CSS"],
+  },
+  {
+    img: p5,
+    title: "Oliveira & Martins Advogados",
+    url: "https://oliveira-martins-advogados.vercel.app/",
     tags: ["React", "TanStack Start", "Tailwind CSS"],
   },
 ] as const;

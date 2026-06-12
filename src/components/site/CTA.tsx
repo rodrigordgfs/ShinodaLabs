@@ -46,15 +46,10 @@ export function CTA() {
         className="relative z-10 mx-auto max-w-6xl px-5"
       >
         <div>
-          <div className="max-w-3xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-teal/20 bg-teal/10 px-3 py-1.5 font-mono text-xs uppercase tracking-[0.24em] text-teal shadow-[0_0_28px_-18px_oklch(0.78_0.14_180/0.9)]">
-              <span className="h-1.5 w-1.5 rounded-full bg-teal" />
-              Briefing aberto
-            </div>
-            <h2 className="max-w-2xl font-display text-4xl font-semibold leading-tight text-foreground sm:text-5xl">
-              Um site com direção,
-              <br />
-              não só presença.
+          <div className="max-w-2xl">
+            <div className="mb-4 text-xs uppercase tracking-[0.2em] text-teal">/ Briefing aberto</div>
+            <h2 className="font-display text-4xl font-semibold leading-tight text-foreground sm:text-5xl">
+              Um site com <span className="text-gradient-teal">direção</span>, não só presença.
             </h2>
             <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground">
               Traga a ideia, o contexto ou o problema. Eu transformo em uma rota clara de design,

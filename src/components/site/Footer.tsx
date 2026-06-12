@@ -41,8 +41,8 @@ export function Footer() {
             </div>
             <ul className="flex flex-col items-center space-y-2 text-sm md:items-start">
               {[
-                ["Projetos", "#work"],
                 ["Sobre", "#about"],
+                ["Projetos", "#work"],
                 ["Contato", "#contact"],
               ].map(([l, h]) => (
                 <li key={l}>
