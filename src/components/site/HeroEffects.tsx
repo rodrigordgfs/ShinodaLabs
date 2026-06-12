@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   motion,
   useMotionTemplate,
@@ -42,6 +42,20 @@ export function HeroEffectsStatic() {
 }
 
 export function HeroEffects() {
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    setReducedMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  }, []);
+
+  if (reducedMotion) {
+    return <HeroEffectsStatic />;
+  }
+
+  return <HeroEffectsInteractive />;
+}
+
+function HeroEffectsInteractive() {
   const pointerX = useMotionValue(50);
   const pointerY = useMotionValue(42);
   const smoothX = useSpring(pointerX, { stiffness: 55, damping: 26, mass: 0.65 });

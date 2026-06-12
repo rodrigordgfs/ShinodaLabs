@@ -1,7 +1,6 @@
 import { ArrowRight, ArrowUpRight, Gauge, Palette, Search } from "lucide-react";
 
-import { HeroEffectsStatic } from "@/components/site/HeroEffects";
-import { HeroPreview } from "@/components/site/HeroPreview";
+import { HeroEffects } from "@/components/site/HeroEffects";
 
 const pillars = [
   { icon: Palette, label: "Design premium" },
@@ -15,7 +14,7 @@ export function Hero() {
       id="top"
       className="relative flex min-h-[100svh] items-center overflow-hidden bg-[#030303] noise"
     >
-      <HeroEffectsStatic />
+      <HeroEffects />
 
       <div className="section-light-beam pointer-events-none absolute z-[1] opacity-70" aria-hidden />
 
@@ -28,8 +27,8 @@ export function Hero() {
         aria-hidden
       />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-14 px-5 pb-24 pt-28 sm:px-6 sm:pb-28 sm:pt-32 lg:grid-cols-12 lg:gap-10 lg:pb-32 lg:pt-36">
-        <div className="flex flex-col items-center text-center lg:col-span-6 lg:items-start lg:text-left xl:col-span-5">
+      <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center px-5 pb-24 pt-28 text-center sm:px-6 sm:pb-28 sm:pt-32 lg:pb-32 lg:pt-36">
+        <div className="flex flex-col items-center">
           <div className="inline-flex items-center gap-2.5 rounded-full border border-teal/20 bg-teal/[0.07] px-3.5 py-1.5 shadow-[0_0_28px_-18px_oklch(0.78_0.14_180/0.85)] backdrop-blur-md">
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inset-0 animate-ping rounded-full bg-teal opacity-75" />
@@ -60,7 +59,7 @@ export function Hero() {
             de produto e presença digital memorável.
           </p>
 
-          <ul className="mt-7 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 lg:justify-start">
+          <ul className="mt-7 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
             {pillars.map(({ icon: Icon, label }) => (
               <li
                 key={label}
@@ -72,7 +71,7 @@ export function Hero() {
             ))}
           </ul>
 
-          <div className="mt-9 flex w-full flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+          <div className="mt-9 flex w-full flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
               href="#contact"
               className="group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-foreground px-8 py-3.5 text-[15px] font-semibold tracking-[-0.01em] text-background shadow-[0_1px_0_0_oklch(1_0_0/0.08)_inset] transition-[transform,box-shadow] duration-300 hover:scale-[1.015] hover:shadow-[0_0_44px_-8px_oklch(0.78_0.14_180/0.5)] active:scale-[0.985] sm:w-auto"
@@ -96,10 +95,6 @@ export function Hero() {
               />
             </a>
           </div>
-        </div>
-
-        <div className="lg:col-span-6 xl:col-span-7">
-          <HeroPreview />
         </div>
       </div>
 

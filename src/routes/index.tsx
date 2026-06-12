@@ -17,8 +17,6 @@ import {
   buildMetaTags,
 } from "@/lib/seo";
 
-const HERO_PREVIEW_URL = "/hero-preview.webp";
-
 const CustomCursor = lazy(() =>
   import("@/components/site/CustomCursor").then((module) => ({ default: module.CustomCursor })),
 );
@@ -32,16 +30,7 @@ export const Route = createFileRoute("/")({
       keywords: SITE_KEYWORDS,
       path: "/",
     }),
-    links: [
-      buildCanonicalLink("/"),
-      {
-        rel: "preload",
-        as: "image",
-        href: HERO_PREVIEW_URL,
-        type: "image/webp",
-        fetchPriority: "high",
-      },
-    ],
+    links: [buildCanonicalLink("/")],
   }),
 });
 
