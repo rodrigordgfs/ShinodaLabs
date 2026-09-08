@@ -22,7 +22,7 @@ export function About() {
           transition={{ duration: 0.7 }}
           className="lg:col-span-5"
         >
-          <div className="relative rounded-3xl overflow-hidden card-premium aspect-[4/5]">
+            <div className="relative overflow-hidden border-y border-border card-premium aspect-[4/5]">
             <img
               src={avatar}
               alt="Fundador ShinodaLabs"
@@ -38,7 +38,7 @@ export function About() {
                 Desenvolvedor de Sites · 7 anos de mercado
               </div>
             </div>
-            <div className="absolute top-4 right-4 glass rounded-full px-3 py-1 text-xs font-medium text-primary">
+            <div className="absolute top-4 right-4 border-l-2 border-teal bg-background/90 px-3 py-1 text-xs font-medium text-primary">
               ● Online
             </div>
           </div>
@@ -51,7 +51,7 @@ export function About() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="lg:col-span-7"
         >
-          <div className="text-xs uppercase tracking-[0.2em] text-teal mb-4">/ Sobre</div>
+          <div className="text-xs uppercase tracking-[0.2em] text-teal mb-4">02 / Sobre o estúdio</div>
           <h2 className="font-display text-4xl sm:text-5xl font-semibold leading-tight text-foreground">
             Um estúdio focado no que <span className="text-gradient">poucos olham</span>: o detalhe.
           </h2>
@@ -67,10 +67,10 @@ export function About() {
             <span className="text-foreground"> "é exatamente isso"</span>.
           </p>
 
-          <div className="mt-10 grid sm:grid-cols-2 gap-3">
+          <div className="mt-10 grid border-t border-border sm:grid-cols-2">
             {skills.map((s) => (
-              <div key={s.label} className="card-premium rounded-xl p-4 flex items-start gap-3">
-                <div className="h-9 w-9 rounded-lg bg-teal/10 border border-teal/20 flex items-center justify-center text-teal shrink-0">
+              <div key={s.label} className="card-premium flex items-start gap-3 border-b-0 border-x-0 border-t-0 p-4 first:border-r sm:nth-[odd]:border-r">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center border border-teal/20 text-teal">
                   <s.icon className="h-4 w-4" />
                 </div>
                 <div>

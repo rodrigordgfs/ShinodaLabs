@@ -34,8 +34,7 @@ export const SITE_KEYWORDS = [
   "ShinodaLabs",
 ].join(", ");
 
-export const HOME_TITLE =
-  "Criação de Sites Premium | ShinodaLabs — Sites que Convertem";
+export const HOME_TITLE = "Criação de Sites Premium | ShinodaLabs — Sites que Convertem";
 
 export const HOME_DESCRIPTION =
   "Estúdio digital especializado em sites e landing pages premium com design, alta performance e SEO técnico. Transforme visitantes em clientes com a ShinodaLabs.";
@@ -75,13 +74,15 @@ export const FAQ_ITEMS = [
   },
 ] as const;
 
-type MetaTag = {
-  title?: string;
-  name?: string;
-  property?: string;
-  content: string;
-  charSet?: string;
-};
+type MetaTag =
+  | { title: string }
+  | {
+      title?: string;
+      name?: string;
+      property?: string;
+      content: string;
+      charSet?: string;
+    };
 
 type LinkTag = {
   rel: string;
@@ -119,8 +120,8 @@ export function buildMetaTags(options: {
       name: "googlebot",
       content: "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
     },
-    { name: "theme-color", content: "#030303" },
-    { name: "color-scheme", content: "dark" },
+    { name: "theme-color", content: "#ffffff" },
+    { name: "color-scheme", content: "light dark" },
     { name: "format-detection", content: "telephone=no" },
     { property: "og:title", content: options.title },
     { property: "og:description", content: options.description },

@@ -12,7 +12,7 @@ export function DeferredAnalytics() {
       });
     };
 
-    if ("requestIdleCallback" in window) {
+    if (typeof window.requestIdleCallback === "function") {
       const id = requestIdleCallback(load, { timeout: 4000 });
       return () => cancelIdleCallback(id);
     }

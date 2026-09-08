@@ -8,11 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { DeferredAnalytics } from "@/components/site/DeferredAnalytics";
-import {
-  buildCanonicalLink,
-  buildMetaTags,
-  buildStructuredDataGraph,
-} from "@/lib/seo";
+import { buildCanonicalLink, buildMetaTags, buildStructuredDataGraph } from "@/lib/seo";
 import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
@@ -77,8 +73,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "theme-color", content: "#030303" },
-      { name: "color-scheme", content: "dark" },
+      { name: "theme-color", content: "#ffffff" },
+      { name: "color-scheme", content: "light dark" },
     ],
     links: [
       {

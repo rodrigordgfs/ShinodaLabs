@@ -13,7 +13,7 @@ export function HeroEffectsStatic() {
   return (
     <>
       <div
-        className="absolute inset-0 z-0 scale-105 opacity-[0.32]"
+        className="absolute inset-0 z-0 scale-105 opacity-[0.12] grayscale"
         style={{
           backgroundImage: `url(${heroBg})`,
           backgroundSize: "cover",
@@ -28,7 +28,7 @@ export function HeroEffectsStatic() {
         className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_50%_42%,oklch(0.78_0.14_180/0.14),transparent_28rem)] mix-blend-screen"
         aria-hidden
       />
-      <div className="bg-grid bg-grid-fade absolute -inset-8 z-0 opacity-40" aria-hidden />
+      <div className="bg-grid bg-grid-fade absolute -inset-8 z-0 opacity-15" aria-hidden />
       <div
         className="pointer-events-none absolute left-1/2 top-[38%] z-0 h-[min(560px,75vw)] w-[min(780px,95vw)] -translate-x-1/2 -translate-y-1/2 rounded-full"
         style={{
@@ -95,7 +95,7 @@ function HeroEffectsInteractive() {
   return (
     <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
       <motion.div
-        className="absolute inset-0 z-0 opacity-[0.32]"
+        className="absolute inset-0 z-0 opacity-[0.12] grayscale"
         style={{
           x: imageX,
           y: imageY,
@@ -110,7 +110,7 @@ function HeroEffectsInteractive() {
       />
       <motion.div className="absolute inset-0 z-0 mix-blend-screen" style={{ background: spotlight }} />
       <motion.div
-        className="bg-grid bg-grid-fade absolute -inset-8 z-0 opacity-40"
+        className="bg-grid bg-grid-fade absolute -inset-8 z-0 opacity-15"
         style={{ x: gridX, y: gridY }}
       />
       <motion.div

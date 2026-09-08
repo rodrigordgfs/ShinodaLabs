@@ -41,7 +41,7 @@ export function Navbar() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-[padding] duration-300",
-        scrolled ? "pt-3 md:pt-3" : "pt-4 md:pt-5",
+        scrolled ? "pt-0" : "pt-2",
       )}
     >
       {open && (
@@ -53,21 +53,21 @@ export function Navbar() {
         />
       )}
 
-      <div className="relative z-50 mx-auto max-w-6xl px-4 sm:px-5">
+      <div className="relative z-50 mx-auto max-w-6xl px-5 sm:px-6">
         <nav
           className={cn(
-            "flex items-center gap-2 rounded-full border px-2 py-2 sm:gap-3 sm:px-3",
-            "bg-background/70 shadow-[0_0_0_1px_oklch(1_0_0/0.05)_inset] backdrop-blur-xl transition-[box-shadow,border-color,background-color] duration-300",
+            "flex items-center gap-2 border-b px-0 py-3 sm:gap-3",
+            "bg-background/95 transition-[border-color,background-color] duration-300",
             scrolled
-              ? "border-border/55 shadow-lg shadow-black/25"
-              : "border-border/35 shadow-md shadow-black/15",
+              ? "border-border"
+              : "border-border/50",
           )}
           aria-label="Principal"
         >
           <a
             href="#top"
             aria-label="ShinodaLabs — voltar ao início"
-            className="group flex shrink-0 items-center rounded-full py-1 pl-1 pr-2 sm:pr-3"
+            className="group flex shrink-0 items-center py-1 pr-3"
             onClick={() => setOpen(false)}
           >
             <img
@@ -82,12 +82,12 @@ export function Navbar() {
           </a>
 
           <div className="hidden min-w-0 flex-1 justify-center md:flex">
-            <ul className="flex items-center rounded-full border border-border/30 bg-foreground/4 p-1">
+            <ul className="flex items-center gap-5">
               {links.map((l) => (
                 <li key={l.href}>
                   <a
                     href={l.href}
-                    className="block min-h-11 rounded-full px-4 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-card/90 hover:text-foreground"
+                    className="block min-h-11 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:text-teal"
                   >
                     {l.label}
                   </a>
@@ -99,7 +99,7 @@ export function Navbar() {
           <div className="ml-auto flex items-center gap-2 sm:gap-2.5">
             <a
               href="#contact"
-              className="hidden min-h-11 items-center gap-1.5 rounded-full bg-foreground px-4 py-2.5 text-sm font-medium text-background transition-colors hover:bg-teal md:inline-flex"
+              className="hidden min-h-11 items-center gap-1.5 border-l border-border pl-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:text-teal md:inline-flex"
             >
               Iniciar projeto
               <ArrowUpRight className="h-3.5 w-3.5 opacity-80" aria-hidden />
@@ -108,7 +108,7 @@ export function Navbar() {
               type="button"
               onClick={() => setOpen((v) => !v)}
               className={cn(
-                "inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors md:hidden",
+                "inline-flex h-11 w-11 items-center justify-center border transition-colors md:hidden",
                 open
                   ? "border-teal/40 bg-teal/10 text-foreground"
                   : "border-border/50 bg-background/60 text-foreground hover:border-border hover:bg-card/60",

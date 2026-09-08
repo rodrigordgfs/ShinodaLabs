@@ -21,21 +21,13 @@ export function CTA() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-linear-to-b from-card/25 via-background to-background py-28 noise"
+      className="relative overflow-hidden border-t border-border bg-background py-28 noise"
     >
       <div
         className="pointer-events-none absolute inset-0 bg-(--gradient-hero) opacity-[0.85]"
         aria-hidden
       />
       <SectionBackdrop variant="mesh" align="right" />
-      <div
-        className="pointer-events-none absolute -bottom-32 left-[-12%] h-[min(32rem,90vw)] w-[min(32rem,90vw)] rounded-full bg-emerald/14 blur-[120px]"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute top-[18%] right-[-8%] h-[min(26rem,70vw)] w-[min(26rem,70vw)] rounded-full bg-teal/12 blur-[100px]"
-        aria-hidden
-      />
       <div className="absolute inset-x-0 top-0 z-10 h-px bg-border/60" />
 
       <motion.div
@@ -47,7 +39,7 @@ export function CTA() {
       >
         <div>
           <div className="max-w-2xl">
-            <div className="mb-4 text-xs uppercase tracking-[0.2em] text-teal">/ Briefing aberto</div>
+            <div className="mb-4 text-xs uppercase tracking-[0.2em] text-teal">04 / Briefing aberto</div>
             <h2 className="font-display text-4xl font-semibold leading-tight text-foreground sm:text-5xl">
               Um site com <span className="text-gradient-teal">direção</span>, não só presença.
             </h2>
@@ -57,7 +49,7 @@ export function CTA() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-border/60 bg-border/50 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-px overflow-hidden border-y border-border/60 bg-border/50 md:grid-cols-2 lg:grid-cols-3">
             {[
               ["01", "Discovery", "Negócio, audiência, objetivos, escopo e métricas."],
               ["02", "Strategy & UX", "Arquitetura de informação, fluxos e protótipos navegáveis."],
@@ -95,7 +87,7 @@ export function CTA() {
                   href="https://wa.me/5551996236798"
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-colors hover:bg-teal"
+                  className="group inline-flex items-center justify-center gap-2 bg-teal px-6 py-3 text-sm font-medium text-background transition-colors hover:bg-foreground"
                 >
                   <WhatsAppIcon className="h-4 w-4" />
                   Enviar briefing

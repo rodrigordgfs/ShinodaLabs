@@ -23,11 +23,11 @@ export function Footer() {
             <p className="mx-auto mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground md:mx-0">
               Estúdio digital independente. Construindo produtos premium para marcas ambiciosas.
             </p>
-            <div className="mt-5 flex flex-wrap justify-center gap-2 md:justify-start">
+            <div className="mt-5 flex flex-wrap justify-center gap-x-4 gap-y-1 md:justify-start">
               {["Criação de sites", "Landing pages", "SEO técnico"].map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-teal/30 bg-teal/15 px-3 py-1 text-xs font-medium text-primary"
+                  className="border-l border-teal pl-2 text-xs font-medium text-primary"
                 >
                   {item}
                 </span>
@@ -74,7 +74,7 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer noopener"
                   aria-label={label}
-                  className="flex h-12 w-12 items-center justify-center rounded-xl border border-border bg-card/70 text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-teal/40 hover:text-teal hover:shadow-[0_0_30px_-14px_oklch(0.78_0.14_180/0.9)]"
+                  className="flex h-12 w-12 items-center justify-center border border-border bg-card/70 text-muted-foreground transition-colors hover:border-teal hover:text-teal"
                 >
                   <I className="h-4 w-4" aria-hidden />
                 </a>

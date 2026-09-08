@@ -68,7 +68,7 @@ type Project = (typeof projects)[number];
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="group h-full overflow-hidden rounded-2xl card-premium">
+    <article className="group h-full overflow-hidden border-y border-border card-premium">
       <div className="relative aspect-[16/10] overflow-hidden bg-secondary">
         <img
           src={project.img}
@@ -79,7 +79,7 @@ function ProjectCard({ project }: { project: Project }) {
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-card via-card/0 to-transparent opacity-60" />
-        <div className="absolute top-4 left-4 glass rounded-full px-3 py-1 text-xs font-medium uppercase tracking-wider text-primary">
+        <div className="absolute top-4 left-4 border-l-2 border-teal bg-background/90 px-3 py-1 text-xs font-medium uppercase tracking-wider text-primary">
           {project.title}
         </div>
         {project.url && (
@@ -88,7 +88,7 @@ function ProjectCard({ project }: { project: Project }) {
             target="_blank"
             rel="noreferrer"
             aria-label={`Abrir site ${project.title}`}
-            className="absolute top-4 right-4 flex h-11 w-11 items-center justify-center rounded-full border border-border/50 bg-card/80 text-foreground opacity-90 transition-opacity hover:border-teal/40 hover:text-teal sm:opacity-0 sm:group-hover:opacity-100"
+            className="absolute top-4 right-4 flex h-11 w-11 items-center justify-center border border-border bg-background/90 text-foreground opacity-90 transition-colors hover:border-teal hover:text-teal sm:opacity-0 sm:group-hover:opacity-100"
           >
             <ArrowUpRight className="h-4 w-4" aria-hidden />
           </a>
@@ -104,7 +104,7 @@ function ProjectCard({ project }: { project: Project }) {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="text-[11px] font-mono text-muted-foreground border border-border rounded-md px-2 py-0.5"
+              className="border-l border-border pl-2 text-[11px] font-mono text-muted-foreground"
             >
               {tag}
             </span>
@@ -161,7 +161,7 @@ function WorkCarousel() {
         slidesToScroll: 1,
         containScroll: "trimSnaps",
       }}
-      className="relative px-12 sm:px-14"
+      className="relative border-l border-border px-8 sm:px-12"
     >
       <CarouselContent className="-ml-4 md:-ml-5">
         {projects.map((project) => (
@@ -183,7 +183,7 @@ export function Work() {
       <div className="relative mx-auto max-w-6xl px-5">
         <div className="mb-14 flex items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <div className="mb-4 text-xs uppercase tracking-[0.2em] text-teal">/ Projetos</div>
+            <div className="mb-4 text-xs uppercase tracking-[0.2em] text-teal">01 / Projetos selecionados</div>
             <h2 className="font-display text-4xl font-semibold leading-tight text-foreground sm:text-5xl">
               Projetos pensados para{" "}
               <span className="text-gradient-teal">impressionar e converter</span>.
